@@ -1,0 +1,28 @@
+{
+  "schema_version": "ard-agent-config-v1",
+  "protocol_id": "toolkit_v1",
+  "evidence_kind": "raw_recomputable",
+  "environment": "frozenlake_deterministic",
+  "grid_prompt_profile": "action_only_v2",
+  "split": "validation",
+  "seed": 5422,
+  "model": {
+    "backend": "transformers",
+    "model_id": "qwen17-base-monitor",
+    "path": "/EDIT/ABSOLUTE/LOCAL/Qwen3-1.7B",
+    "revision": "EDIT_operator_declared_Base_revision",
+    "device": "cuda:0",
+    "dtype": "bfloat16",
+    "chat_template_kwargs": {"enable_thinking": false}
+  },
+  "decoding": {"max_new_tokens": 32, "temperature": 0.6, "top_k": 0, "top_p": 0.9},
+  "budgets": [6, 8],
+  "ks": [1, 2],
+  "samples_per_task": 2,
+  "bootstrap_replicates": 200,
+  "failure_policy": "fail",
+  "tasks": [
+    {"task_id": "smoke-open-grid", "desc": ["SFFF", "FFFF", "FFFF", "FFFG"]},
+    {"task_id": "smoke-holes-grid", "desc": ["SFFF", "FHHF", "FFFF", "FFFG"]}
+  ]
+}

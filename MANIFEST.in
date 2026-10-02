@@ -1,0 +1,16 @@
+include README.md README.zh-CN.md CHANGELOG.md STATUS.md AGENTS.md LICENSE NOTICE CITATION.cff CONTRIBUTING.md
+recursive-include .github *.yml
+recursive-include configs *.json
+recursive-include docs *.md *.json
+recursive-include paper *.md
+recursive-include examples *.py *.json *.html *.md
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include requirements *.txt
+prune runs
+prune wandb
+prune .venv
+prune .git
+prune build
+prune dist
+global-exclude __pycache__ *.py[cod] *.log .env

@@ -1,0 +1,78 @@
+{
+  "schema_version": "ard-source-map-v1",
+  "paper": {
+    "path": "9-26-5422_What_Does_Multi_Turn_Rein.pdf",
+    "expected_sha256": "83d0194bc8df126c8dd1864f80dae837c10f26d1ce81f79164b5bd55853d3933"
+  },
+  "entries": [
+    {
+      "experiment_id": "section3_pass_at_k",
+      "paper_location": "3.1 / Fig.2",
+      "plot_candidates": ["figure-summary/original/figures/final-figures/pass_at_K_analysis_9_14/draw_pass_at_k_grids.py"],
+      "code_candidates": ["scripts/run_unified_pass_at_kt.py", "scripts/run_controlled_trajectory_pass_at_kt_v2.py"],
+      "missing_fields": ["formal_raw_rollouts", "model_revisions", "config_and_seeds", "verified_aggregate_command"]
+    },
+    {
+      "experiment_id": "section3_pass_at_t",
+      "paper_location": "3.2 / Fig.3",
+      "plot_candidates": ["figure-summary/original/figures/final-figures/pass_at_T_9_21_noise/draw_pass_at_t_grids.py"],
+      "code_candidates": ["scripts/run_deepcode_multiturn_pass_at_kt_v2.py"],
+      "missing_fields": ["per_T_conditioned_rollouts", "model_revisions", "formal_config", "table_budget_rounding"]
+    },
+    {
+      "experiment_id": "structural_budget",
+      "paper_location": "Appendix B.3 / Fig.10",
+      "plot_candidates": ["figure-summary/original/figures/final-figures/pass_at_T_9_21_noise/draw_pass_at_t_grids.py"],
+      "code_candidates": ["docs/STRUCTURAL_PASS_AT_T_UPPER_BOUND_PLAN.md", "rlve_train/budget/contracts.py"],
+      "missing_fields": ["formal_task_ids", "BFCL_annotation_proof_direction", "budget_counting_convention"]
+    },
+    {
+      "experiment_id": "matched_local_quality",
+      "paper_location": "3.3 / Fig.4-6",
+      "plot_candidates": ["figure-summary/original/figures/final-figures/local_decision_quality_9_15/draw_combined_orig_colors.py"],
+      "code_candidates": ["rlve_eval/formal_local/trajectory_pool.py", "rlve_eval/benchmarks/frozenlake.py", "rlve_eval/formal_local/deepcode.py"],
+      "missing_fields": ["formal_Base_RL_mixed_pool", "G16_actions", "scorer_configuration", "formal_model_revisions"]
+    },
+    {
+      "experiment_id": "error_prefix_recovery",
+      "paper_location": "3.3 / Appendix E.4",
+      "plot_candidates": [],
+      "code_candidates": ["scripts/run_error_prefix_recovery.py", "recovery_experiment/REPORT.md", "docs/LOCAL_DECISION_ERROR_INJECTION_PROTOCOL.md"],
+      "missing_fields": ["formal_4B_8B_recovery_records", "paper_injector_checkpoint_and_prompt", "prefix_pool_and_remaining_budgets"]
+    },
+    {
+      "experiment_id": "likelihood_mechanism",
+      "paper_location": "4.1 / Fig.7 / Appendix E.2",
+      "plot_candidates": ["figure-summary/original/section-4-nll-analysis/llr_mechanism_new/plot_terminal_compact_overlay.py"],
+      "code_candidates": ["section-4-nll-analysis/llr_mechanism_new/score_responses.py", "section-4-nll-analysis/llr_mechanism_new/matched_controls.py"],
+      "missing_fields": ["raw_teacher_forced_token_scores", "tokenizer_revisions", "NLL_sum_vs_per_token", "length_matching_inputs"]
+    },
+    {
+      "experiment_id": "dual_training_validation",
+      "paper_location": "4.2 / Fig.8 / Appendix E.3",
+      "plot_candidates": ["figure-summary/original/figures/final-figures/figure-style/section-4-2-training-dynamics/draw_training_curves_style.py"],
+      "code_candidates": ["rlve_eval/fixed_state_monitor.py", "scripts/run_fixed_state_monitor.py", "docs/fixed_state_monitor.md"],
+      "missing_fields": ["formal_Base_pool_512", "G8_records", "multi_turn_validation_logs", "checkpoint_step_alignment"]
+    },
+    {
+      "experiment_id": "process_signals",
+      "paper_location": "5.1 / Fig.9",
+      "plot_candidates": [],
+      "code_candidates": ["rlve_train/ppo.py", "docs/GiGPO_PPO_训练框架使用说明.md"],
+      "missing_fields": ["formal_training_configs", "judge_prompt_revision_cache", "reward_mixing_weights", "raw_training_logs"]
+    },
+    {
+      "experiment_id": "budgetmix",
+      "paper_location": "5.2-5.4 / Table 1",
+      "plot_candidates": ["figure-summary/original/figures/final-figures/local_decision_quality_9_15/draw_budgetmix_combined.py"],
+      "code_candidates": ["rlve_train/budget/sampler.py", "rlve_train/budget/config.py", "docs/BUDGETMIX_GRPO.md", "tests/test_budget_mix.py"],
+      "missing_fields": ["formal_uniform_deciles_configs", "actual_group_occurrence_keys", "baseline_and_intervention_checkpoints", "raw_evaluation_records"]
+    }
+  ],
+  "license_candidates": [
+    {"path": "LICENSE", "component": "local_research_code", "expected_license": null},
+    {"path": "third_party/ragen/LICENSE", "component": "RAGEN", "expected_license": "MIT"},
+    {"path": "third_party/verl-agent/LICENSE", "component": "local_verl_agent", "expected_license": null},
+    {"path": "third_party/rllm/LICENSE", "component": "local_rllm", "expected_license": null}
+  ]
+}

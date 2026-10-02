@@ -1,0 +1,59 @@
+{
+  "entries": [
+    {
+      "component": "local_research_code",
+      "distribution_review": "pending",
+      "expected_license": null,
+      "migrated_code": false,
+      "observation": {
+        "errno": 2,
+        "error_type": "FileNotFoundError",
+        "relative_path": "LICENSE",
+        "status": "unavailable"
+      },
+      "path": "LICENSE"
+    },
+    {
+      "component": "RAGEN",
+      "distribution_review": "pending",
+      "expected_license": "MIT",
+      "migrated_code": false,
+      "observation": {
+        "bytes": 1057,
+        "relative_path": "third_party/ragen/LICENSE",
+        "sha256": "973dec305c0eb86967ce86199cbb04044a18279188e28b00b6f6fded38442702",
+        "status": "observed"
+      },
+      "path": "third_party/ragen/LICENSE"
+    },
+    {
+      "component": "local_verl_agent",
+      "distribution_review": "pending",
+      "expected_license": null,
+      "migrated_code": false,
+      "observation": {
+        "errno": 2,
+        "error_type": "FileNotFoundError",
+        "relative_path": "third_party/verl-agent/LICENSE",
+        "status": "unavailable"
+      },
+      "path": "third_party/verl-agent/LICENSE"
+    },
+    {
+      "component": "local_rllm",
+      "distribution_review": "pending",
+      "expected_license": null,
+      "migrated_code": false,
+      "observation": {
+        "bytes": 11357,
+        "relative_path": "third_party/rllm/LICENSE",
+        "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "status": "observed"
+      },
+      "path": "third_party/rllm/LICENSE"
+    }
+  ],
+  "new_repository_original_code": "MIT",
+  "schema_version": "ard-license-inventory-v1",
+  "third_party_code_vendored": false
+}

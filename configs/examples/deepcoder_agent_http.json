@@ -1,0 +1,76 @@
+{
+  "schema_version": "ard-agent-config-v1",
+  "protocol_id": "toolkit_v1",
+  "evidence_kind": "raw_recomputable",
+  "split": "smoke",
+  "model": {
+    "backend": "http",
+    "model_id": "replace-with-checkpoint-id",
+    "revision": "replace-with-checkpoint-revision",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "seed_support": "unknown",
+    "send_top_k": true,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "decoding": {
+    "temperature": 0.6,
+    "top_p": 0.9,
+    "top_k": 0,
+    "max_new_tokens": 256
+  },
+  "budgets": [
+    2
+  ],
+  "ks": [
+    1
+  ],
+  "samples_per_task": 1,
+  "bootstrap_replicates": 200,
+  "seed": 5422,
+  "failure_policy": "fail",
+  "environment": "deepcoder_stdin",
+  "tasks": [
+    {
+      "task_id": "smoke-sum",
+      "question": "Read two integers from standard input, separated by whitespace, and print their sum.",
+      "public_tests": [
+        {
+          "input": "1 2\n",
+          "output": "3\n"
+        }
+      ],
+      "hidden_tests": [
+        {
+          "input": "17 29\n",
+          "output": "46\n"
+        },
+        {
+          "input": "-7 4\n",
+          "output": "-3\n"
+        }
+      ]
+    },
+    {
+      "task_id": "smoke-max",
+      "question": "Read a nonempty list of integers from standard input, separated by whitespace. Print the maximum integer.",
+      "public_tests": [
+        {
+          "input": "1 5 3\n",
+          "output": "5\n"
+        }
+      ],
+      "hidden_tests": [
+        {
+          "input": "-8 -2 -11\n",
+          "output": "-2\n"
+        },
+        {
+          "input": "19\n",
+          "output": "19\n"
+        }
+      ]
+    }
+  ]
+}

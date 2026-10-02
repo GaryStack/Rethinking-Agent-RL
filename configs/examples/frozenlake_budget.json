@@ -1,0 +1,22 @@
+{
+  "schema_version": "ard-budget-config-v1",
+  "protocol_id": "toolkit_v1",
+  "evidence_kind": "demo_synthetic",
+  "environment": "frozenlake_deterministic",
+  "budget_mode": "budget_aware_rerollout",
+  "tasks": [
+    {"task_id": "corridor", "desc": ["SFG"]},
+    {"task_id": "detour", "desc": ["SFH", "FFG"]},
+    {"task_id": "unreachable", "desc": ["SHG"]}
+  ],
+  "models": [
+    {"model_id": "random-policy", "policy": "random"},
+    {"model_id": "shortest-path-policy", "policy": "shortest_path"}
+  ],
+  "budgets": [1, 2, 3, 4, 6, 8],
+  "ks": [1, 4, 8],
+  "samples_per_task": 32,
+  "seed": 5422,
+  "bootstrap_replicates": 400,
+  "output": "../../runs/frozenlake-budget"
+}

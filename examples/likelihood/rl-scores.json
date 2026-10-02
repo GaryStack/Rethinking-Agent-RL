@@ -1,0 +1,90 @@
+[
+  {
+    "schema_version": "ard-likelihood-v1",
+    "status": "ok",
+    "model_id": "toy-rl",
+    "event_id": "base-event",
+    "task_id": "toy-task",
+    "trajectory_id": "base-trajectory",
+    "source": "base",
+    "success": true,
+    "input_hash": "0f0b95b6b08507df70648dfd1dbfd70a52f30241bd8acacfe200bd30e2b6003b",
+    "prompt_ids": [
+      10
+    ],
+    "response_ids": [
+      1,
+      2
+    ],
+    "offsets": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "action_mask": [
+      false,
+      true
+    ],
+    "token_logprobs": [
+      -0.5,
+      -1.5
+    ],
+    "response_tokens": 2,
+    "response_logprob_sum": -2.0,
+    "response_nll_sum": 2.0,
+    "response_nll_per_token": 1.0,
+    "action_tokens": 1,
+    "action_nll_sum": 1.5,
+    "action_nll_per_token": 1.5,
+    "action_span_convention": "overlapping_tokens_conditioned_on_full_prior_response"
+  },
+  {
+    "schema_version": "ard-likelihood-v1",
+    "status": "ok",
+    "model_id": "toy-rl",
+    "event_id": "rl-event",
+    "task_id": "toy-task",
+    "trajectory_id": "rl-trajectory",
+    "source": "rl",
+    "success": true,
+    "input_hash": "0f0b95b6b08507df70648dfd1dbfd70a52f30241bd8acacfe200bd30e2b6003b",
+    "prompt_ids": [
+      10
+    ],
+    "response_ids": [
+      1,
+      2
+    ],
+    "offsets": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "action_mask": [
+      false,
+      true
+    ],
+    "token_logprobs": [
+      -0.5,
+      -1.5
+    ],
+    "response_tokens": 2,
+    "response_logprob_sum": -2.0,
+    "response_nll_sum": 2.0,
+    "response_nll_per_token": 1.0,
+    "action_tokens": 1,
+    "action_nll_sum": 1.5,
+    "action_nll_per_token": 1.5,
+    "action_span_convention": "overlapping_tokens_conditioned_on_full_prior_response"
+  }
+]

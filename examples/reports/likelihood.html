@@ -1,0 +1,110 @@
+<!doctype html><meta charset="utf-8"><title>Diagnostic comparison</title><style>body{max-width:960px;margin:2rem auto;font-family:system-ui}svg{width:100%;max-width:700px}pre{white-space:pre-wrap}</style><h1>Diagnostic comparison</h1><p>Descriptive results. Missing values are unavailable; panels have separate units.</p><h2>base_action_nll_per_token</h2><svg viewBox="0 0 600 240" role="img" aria-label="base_action_nll_per_token"><path d="M50 30V190H520" fill="none" stroke="black"/><text x="5" y="30">2</text><text x="5" y="190">2</text><text x="50" y="220">2</text><text x="500" y="220">2</text><circle cx="50.0" cy="190.0" r="5" fill="#247ba0"><title>base: x=2, value=2.0</title></circle><circle cx="50.0" cy="190.0" r="5" fill="#e45756"><title>rl: x=2, value=2.0</title></circle></svg><p>response_tokens; base, rl. Hover each point for its label and value.</p><h2>base_nll_per_token</h2><svg viewBox="0 0 600 240" role="img" aria-label="base_nll_per_token"><path d="M50 30V190H520" fill="none" stroke="black"/><text x="5" y="30">1.5</text><text x="5" y="190">1.5</text><text x="50" y="220">2</text><text x="500" y="220">2</text><circle cx="50.0" cy="190.0" r="5" fill="#247ba0"><title>base: x=2, value=1.5</title></circle><circle cx="50.0" cy="190.0" r="5" fill="#e45756"><title>rl: x=2, value=1.5</title></circle></svg><p>response_tokens; base, rl. Hover each point for its label and value.</p><h2>llr_per_token</h2><svg viewBox="0 0 600 240" role="img" aria-label="llr_per_token"><path d="M50 30V190H520" fill="none" stroke="black"/><text x="5" y="30">0.5</text><text x="5" y="190">0.5</text><text x="50" y="220">2</text><text x="500" y="220">2</text><circle cx="50.0" cy="190.0" r="5" fill="#247ba0"><title>base: x=2, value=0.5</title></circle><circle cx="50.0" cy="190.0" r="5" fill="#e45756"><title>rl: x=2, value=0.5</title></circle></svg><p>response_tokens; base, rl. Hover each point for its label and value.</p><details><summary>Full data and exclusions</summary><pre>{
+  &quot;schema_version&quot;: &quot;ard-llr-v1&quot;,
+  &quot;llr_sign&quot;: &quot;rl_minus_base&quot;,
+  &quot;paired&quot;: [
+    {
+      &quot;event_id&quot;: &quot;base-event&quot;,
+      &quot;task_id&quot;: &quot;toy-task&quot;,
+      &quot;trajectory_id&quot;: &quot;base-trajectory&quot;,
+      &quot;source&quot;: &quot;base&quot;,
+      &quot;success&quot;: true,
+      &quot;response_tokens&quot;: 2,
+      &quot;base_nll_sum&quot;: 3.0,
+      &quot;base_nll_per_token&quot;: 1.5,
+      &quot;llr_sum&quot;: 1.0,
+      &quot;llr_per_token&quot;: 0.5,
+      &quot;base_action_nll_sum&quot;: 2.0,
+      &quot;base_action_nll_per_token&quot;: 2.0
+    },
+    {
+      &quot;event_id&quot;: &quot;rl-event&quot;,
+      &quot;task_id&quot;: &quot;toy-task&quot;,
+      &quot;trajectory_id&quot;: &quot;rl-trajectory&quot;,
+      &quot;source&quot;: &quot;rl&quot;,
+      &quot;success&quot;: true,
+      &quot;response_tokens&quot;: 2,
+      &quot;base_nll_sum&quot;: 3.0,
+      &quot;base_nll_per_token&quot;: 1.5,
+      &quot;llr_sum&quot;: 1.0,
+      &quot;llr_per_token&quot;: 0.5,
+      &quot;base_action_nll_sum&quot;: 2.0,
+      &quot;base_action_nll_per_token&quot;: 2.0
+    }
+  ],
+  &quot;excluded&quot;: [],
+  &quot;full_estimate_available&quot;: true,
+  &quot;completeness_scope&quot;: &quot;supplied_event_union_only_not_original_trajectory_manifest&quot;,
+  &quot;length_control&quot;: {
+    &quot;token_caliper&quot;: 0.2,
+    &quot;step_caliper&quot;: 1,
+    &quot;available&quot;: true,
+    &quot;input_trajectories&quot;: 2,
+    &quot;eligible_trajectories&quot;: 2,
+    &quot;excluded_incomplete_trajectories&quot;: 0,
+    &quot;excluded_event_trajectories&quot;: 0,
+    &quot;completeness_scope&quot;: &quot;supplied_event_union_only&quot;,
+    &quot;matched_pairs&quot;: 1,
+    &quot;unmatched_trajectories&quot;: 0,
+    &quot;pairs&quot;: [
+      {
+        &quot;task_id&quot;: &quot;toy-task&quot;,
+        &quot;success&quot;: true,
+        &quot;base_trajectory_id&quot;: &quot;base-trajectory&quot;,
+        &quot;rl_trajectory_id&quot;: &quot;rl-trajectory&quot;,
+        &quot;relative_token_gap&quot;: 0.0,
+        &quot;step_gap&quot;: 0,
+        &quot;delta_base_nll_per_token&quot;: 0.0,
+        &quot;delta_llr_per_token&quot;: 0.0
+      }
+    ],
+    &quot;aggregation&quot;: &quot;descriptive_pairs_no_causal_claim&quot;
+  },
+  &quot;source_hashes&quot;: {
+    &quot;base&quot;: &quot;00072b5b71a4f99ad2ad5a895eab902c430882e1c2e56b8b277d4d4553b8a798&quot;,
+    &quot;rl&quot;: &quot;b0ec01ad997521c5d8bfcf99ae90d3d107d83065197c4b1c9219c2af66ef5f65&quot;
+  },
+  &quot;series&quot;: [
+    {
+      &quot;label&quot;: &quot;base&quot;,
+      &quot;metric&quot;: &quot;base_nll_per_token&quot;,
+      &quot;x&quot;: 2,
+      &quot;x_unit&quot;: &quot;response_tokens&quot;,
+      &quot;value&quot;: 1.5
+    },
+    {
+      &quot;label&quot;: &quot;base&quot;,
+      &quot;metric&quot;: &quot;llr_per_token&quot;,
+      &quot;x&quot;: 2,
+      &quot;x_unit&quot;: &quot;response_tokens&quot;,
+      &quot;value&quot;: 0.5
+    },
+    {
+      &quot;label&quot;: &quot;base&quot;,
+      &quot;metric&quot;: &quot;base_action_nll_per_token&quot;,
+      &quot;x&quot;: 2,
+      &quot;x_unit&quot;: &quot;response_tokens&quot;,
+      &quot;value&quot;: 2.0
+    },
+    {
+      &quot;label&quot;: &quot;rl&quot;,
+      &quot;metric&quot;: &quot;base_nll_per_token&quot;,
+      &quot;x&quot;: 2,
+      &quot;x_unit&quot;: &quot;response_tokens&quot;,
+      &quot;value&quot;: 1.5
+    },
+    {
+      &quot;label&quot;: &quot;rl&quot;,
+      &quot;metric&quot;: &quot;llr_per_token&quot;,
+      &quot;x&quot;: 2,
+      &quot;x_unit&quot;: &quot;response_tokens&quot;,
+      &quot;value&quot;: 0.5
+    },
+    {
+      &quot;label&quot;: &quot;rl&quot;,
+      &quot;metric&quot;: &quot;base_action_nll_per_token&quot;,
+      &quot;x&quot;: 2,
+      &quot;x_unit&quot;: &quot;response_tokens&quot;,
+      &quot;value&quot;: 2.0
+    }
+  ]
+}</pre></details>

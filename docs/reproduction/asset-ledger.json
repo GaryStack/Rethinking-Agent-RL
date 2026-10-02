@@ -1,0 +1,367 @@
+{
+  "entries": [
+    {
+      "code_artifacts": [
+        {
+          "bytes": 14691,
+          "relative_path": "scripts/run_unified_pass_at_kt.py",
+          "sha256": "a35aa7bb806c39084437dbb1b991768defd00bebfcb178f6b0e5d244fdd4e9e0",
+          "status": "observed"
+        },
+        {
+          "errno": 2,
+          "error_type": "FileNotFoundError",
+          "relative_path": "scripts/run_controlled_trajectory_pass_at_kt_v2.py",
+          "status": "unavailable"
+        }
+      ],
+      "evidence_kind": "summary_only",
+      "experiment_id": "section3_pass_at_k",
+      "missing_fields": [
+        "formal_raw_rollouts",
+        "model_revisions",
+        "config_and_seeds",
+        "verified_aggregate_command"
+      ],
+      "paper_location": "3.1 / Fig.2",
+      "plot_artifacts": [
+        {
+          "bytes": 4968,
+          "relative_path": "figure-summary/original/figures/final-figures/pass_at_K_analysis_9_14/draw_pass_at_k_grids.py",
+          "sha256": "39bc1931db005845ec56fa1f71d96356f3db595527f3bcd4e48d54f280b90cda",
+          "status": "observed"
+        }
+      ],
+      "protocol_id": "paper_v1",
+      "raw_artifacts": [],
+      "redistribution_status": "unverified",
+      "verification_command": null,
+      "verification_status": "not_reproduced"
+    },
+    {
+      "code_artifacts": [
+        {
+          "errno": 2,
+          "error_type": "FileNotFoundError",
+          "relative_path": "scripts/run_deepcode_multiturn_pass_at_kt_v2.py",
+          "status": "unavailable"
+        }
+      ],
+      "evidence_kind": "summary_only",
+      "experiment_id": "section3_pass_at_t",
+      "missing_fields": [
+        "per_T_conditioned_rollouts",
+        "model_revisions",
+        "formal_config",
+        "table_budget_rounding"
+      ],
+      "paper_location": "3.2 / Fig.3",
+      "plot_artifacts": [
+        {
+          "bytes": 15625,
+          "relative_path": "figure-summary/original/figures/final-figures/pass_at_T_9_21_noise/draw_pass_at_t_grids.py",
+          "sha256": "615e1a5880d86f55080b5b9ecfc924114b4b61828aa2b989330a08f66248a095",
+          "status": "observed"
+        }
+      ],
+      "protocol_id": "paper_v1",
+      "raw_artifacts": [],
+      "redistribution_status": "unverified",
+      "verification_command": null,
+      "verification_status": "not_reproduced"
+    },
+    {
+      "code_artifacts": [
+        {
+          "bytes": 17036,
+          "relative_path": "docs/STRUCTURAL_PASS_AT_T_UPPER_BOUND_PLAN.md",
+          "sha256": "18c0eb5d17a20e6c0ae0033a7f6e7a71114c45cc408de41dd5b1c3a29e592017",
+          "status": "observed"
+        },
+        {
+          "bytes": 2091,
+          "relative_path": "rlve_train/budget/contracts.py",
+          "sha256": "5b677933bc82095d9b6e138ae9c3dc012ecc213596ab200ed01986def338d198",
+          "status": "observed"
+        }
+      ],
+      "evidence_kind": "summary_only",
+      "experiment_id": "structural_budget",
+      "missing_fields": [
+        "formal_task_ids",
+        "BFCL_annotation_proof_direction",
+        "budget_counting_convention"
+      ],
+      "paper_location": "Appendix B.3 / Fig.10",
+      "plot_artifacts": [
+        {
+          "bytes": 15625,
+          "relative_path": "figure-summary/original/figures/final-figures/pass_at_T_9_21_noise/draw_pass_at_t_grids.py",
+          "sha256": "615e1a5880d86f55080b5b9ecfc924114b4b61828aa2b989330a08f66248a095",
+          "status": "observed"
+        }
+      ],
+      "protocol_id": "paper_v1",
+      "raw_artifacts": [],
+      "redistribution_status": "unverified",
+      "verification_command": null,
+      "verification_status": "not_reproduced"
+    },
+    {
+      "code_artifacts": [
+        {
+          "bytes": 6221,
+          "relative_path": "rlve_eval/formal_local/trajectory_pool.py",
+          "sha256": "cc25096a4c4a23fd8046ddc75867758a561cf103b39e96f3cd9534a8e06c2684",
+          "status": "observed"
+        },
+        {
+          "bytes": 20902,
+          "relative_path": "rlve_eval/benchmarks/frozenlake.py",
+          "sha256": "d24c03cb35716284e193c8439b5c62f553696e71b072f2b2f37c2fa4a9ecc74b",
+          "status": "observed"
+        },
+        {
+          "bytes": 6687,
+          "relative_path": "rlve_eval/formal_local/deepcode.py",
+          "sha256": "394e795feac1efa5b928b3805a19c53cfb2b3267029acc1bef7dade7f2c10730",
+          "status": "observed"
+        }
+      ],
+      "evidence_kind": "summary_only",
+      "experiment_id": "matched_local_quality",
+      "missing_fields": [
+        "formal_Base_RL_mixed_pool",
+        "G16_actions",
+        "scorer_configuration",
+        "formal_model_revisions"
+      ],
+      "paper_location": "3.3 / Fig.4-6",
+      "plot_artifacts": [
+        {
+          "bytes": 2403,
+          "relative_path": "figure-summary/original/figures/final-figures/local_decision_quality_9_15/draw_combined_orig_colors.py",
+          "sha256": "dfa9ab959820a3059ae973d184a1c881f4786543e92f92458b3c854aadc34f98",
+          "status": "observed"
+        }
+      ],
+      "protocol_id": "paper_v1",
+      "raw_artifacts": [],
+      "redistribution_status": "unverified",
+      "verification_command": null,
+      "verification_status": "not_reproduced"
+    },
+    {
+      "code_artifacts": [
+        {
+          "bytes": 17972,
+          "relative_path": "scripts/run_error_prefix_recovery.py",
+          "sha256": "3e65483c6e4db87ce013c23774079fce401d6608c26a2d6005df9c459d4219bb",
+          "status": "observed"
+        },
+        {
+          "bytes": 6899,
+          "relative_path": "recovery_experiment/REPORT.md",
+          "sha256": "d0faa35af02b83bf5dc4bf6299c723b40ec4ba73879754aaebeffb5dd5424644",
+          "status": "observed"
+        },
+        {
+          "bytes": 6723,
+          "relative_path": "docs/LOCAL_DECISION_ERROR_INJECTION_PROTOCOL.md",
+          "sha256": "cb58d26c7081e2d58cd91aceab05152dee170c12a2dba8509049c1a04d065be1",
+          "status": "observed"
+        }
+      ],
+      "evidence_kind": "missing",
+      "experiment_id": "error_prefix_recovery",
+      "missing_fields": [
+        "formal_4B_8B_recovery_records",
+        "paper_injector_checkpoint_and_prompt",
+        "prefix_pool_and_remaining_budgets"
+      ],
+      "paper_location": "3.3 / Appendix E.4",
+      "plot_artifacts": [],
+      "protocol_id": "paper_v1",
+      "raw_artifacts": [],
+      "redistribution_status": "unverified",
+      "verification_command": null,
+      "verification_status": "not_reproduced"
+    },
+    {
+      "code_artifacts": [
+        {
+          "bytes": 7960,
+          "relative_path": "section-4-nll-analysis/llr_mechanism_new/score_responses.py",
+          "sha256": "fcd0e20a674d24f1fb3879779f985db0e8a00d7f14c63e90f21b4ff8ef1c17a3",
+          "status": "observed"
+        },
+        {
+          "bytes": 4000,
+          "relative_path": "section-4-nll-analysis/llr_mechanism_new/matched_controls.py",
+          "sha256": "50f5c82f22d39d357245b5dc237cc5f6c1ac4080469a7d3033299212087beb1b",
+          "status": "observed"
+        }
+      ],
+      "evidence_kind": "summary_only",
+      "experiment_id": "likelihood_mechanism",
+      "missing_fields": [
+        "raw_teacher_forced_token_scores",
+        "tokenizer_revisions",
+        "NLL_sum_vs_per_token",
+        "length_matching_inputs"
+      ],
+      "paper_location": "4.1 / Fig.7 / Appendix E.2",
+      "plot_artifacts": [
+        {
+          "bytes": 8760,
+          "relative_path": "figure-summary/original/section-4-nll-analysis/llr_mechanism_new/plot_terminal_compact_overlay.py",
+          "sha256": "4f0bdbe1900a3ef15dc07e5d462ffc4cbf6ff41c787c59953ad80e620f5361be",
+          "status": "observed"
+        }
+      ],
+      "protocol_id": "paper_v1",
+      "raw_artifacts": [],
+      "redistribution_status": "unverified",
+      "verification_command": null,
+      "verification_status": "not_reproduced"
+    },
+    {
+      "code_artifacts": [
+        {
+          "bytes": 12560,
+          "relative_path": "rlve_eval/fixed_state_monitor.py",
+          "sha256": "8d05ae6129cd083969f1867885855a40111e7328e84a0bbb572886669883e4c1",
+          "status": "observed"
+        },
+        {
+          "bytes": 13709,
+          "relative_path": "scripts/run_fixed_state_monitor.py",
+          "sha256": "c7f69d214bd5ca3f3c5bc8e8d83ca23849a31354aea86be6f080c90fad003645",
+          "status": "observed"
+        },
+        {
+          "bytes": 5387,
+          "relative_path": "docs/fixed_state_monitor.md",
+          "sha256": "7a5494493a49db4f962e300bdeb0e09a1adb9e6c5d86cd6b078221fc4edb9060",
+          "status": "observed"
+        }
+      ],
+      "evidence_kind": "summary_only",
+      "experiment_id": "dual_training_validation",
+      "missing_fields": [
+        "formal_Base_pool_512",
+        "G8_records",
+        "multi_turn_validation_logs",
+        "checkpoint_step_alignment"
+      ],
+      "paper_location": "4.2 / Fig.8 / Appendix E.3",
+      "plot_artifacts": [
+        {
+          "bytes": 10006,
+          "relative_path": "figure-summary/original/figures/final-figures/figure-style/section-4-2-training-dynamics/draw_training_curves_style.py",
+          "sha256": "2b2f7fcc76b2324b34c5d28d45645ce5dbce8b3a4f1fa390eac8666abf34e5fe",
+          "status": "observed"
+        }
+      ],
+      "protocol_id": "paper_v1",
+      "raw_artifacts": [],
+      "redistribution_status": "unverified",
+      "verification_command": null,
+      "verification_status": "not_reproduced"
+    },
+    {
+      "code_artifacts": [
+        {
+          "bytes": 1850,
+          "relative_path": "rlve_train/ppo.py",
+          "sha256": "1f2c7fce5819ab724c1110b20ec8ae6b754e717791fbb1e6b49b264bf15e29fa",
+          "status": "observed"
+        },
+        {
+          "bytes": 2707,
+          "relative_path": "docs/GiGPO_PPO_\u8bad\u7ec3\u6846\u67b6\u4f7f\u7528\u8bf4\u660e.md",
+          "sha256": "fe854c5566e2252cd3e190e6835f2475895de74ef49d99d13f207e837c3e67a8",
+          "status": "observed"
+        }
+      ],
+      "evidence_kind": "missing",
+      "experiment_id": "process_signals",
+      "missing_fields": [
+        "formal_training_configs",
+        "judge_prompt_revision_cache",
+        "reward_mixing_weights",
+        "raw_training_logs"
+      ],
+      "paper_location": "5.1 / Fig.9",
+      "plot_artifacts": [],
+      "protocol_id": "paper_v1",
+      "raw_artifacts": [],
+      "redistribution_status": "unverified",
+      "verification_command": null,
+      "verification_status": "not_reproduced"
+    },
+    {
+      "code_artifacts": [
+        {
+          "bytes": 4908,
+          "relative_path": "rlve_train/budget/sampler.py",
+          "sha256": "814891ab14dfa76171538b3fbc6bb750f5b52aabfb178770714682339513aff4",
+          "status": "observed"
+        },
+        {
+          "bytes": 5481,
+          "relative_path": "rlve_train/budget/config.py",
+          "sha256": "f265a017d8b1458a4cdd88e09f7be974fa646623795b27837e0a253e8e8204fd",
+          "status": "observed"
+        },
+        {
+          "bytes": 7652,
+          "relative_path": "docs/BUDGETMIX_GRPO.md",
+          "sha256": "028b446c4f1ae7eb6e60e763d2c1e223e54e573760386d1681f44e0279bdcc19",
+          "status": "observed"
+        },
+        {
+          "bytes": 7302,
+          "relative_path": "tests/test_budget_mix.py",
+          "sha256": "a6a80c1d41d3b40afcf413f7cf1a23698c07a91fe177a81fbf9df271e20296b6",
+          "status": "observed"
+        }
+      ],
+      "evidence_kind": "summary_only",
+      "experiment_id": "budgetmix",
+      "missing_fields": [
+        "formal_uniform_deciles_configs",
+        "actual_group_occurrence_keys",
+        "baseline_and_intervention_checkpoints",
+        "raw_evaluation_records"
+      ],
+      "paper_location": "5.2-5.4 / Table 1",
+      "plot_artifacts": [
+        {
+          "bytes": 2662,
+          "relative_path": "figure-summary/original/figures/final-figures/local_decision_quality_9_15/draw_budgetmix_combined.py",
+          "sha256": "ec5986b241a0c865efa0a25b0718fb51a0cd17fb98f69dc9bec5d4811aca0ce9",
+          "status": "observed"
+        }
+      ],
+      "protocol_id": "paper_v1",
+      "raw_artifacts": [],
+      "redistribution_status": "unverified",
+      "verification_command": null,
+      "verification_status": "not_reproduced"
+    }
+  ],
+  "generated_at": "2026-09-28T13:45:30.052114+00:00",
+  "inspection": "targeted_read_only_hash_inventory",
+  "paper": {
+    "bytes": 1357827,
+    "expected_sha256": "83d0194bc8df126c8dd1864f80dae837c10f26d1ce81f79164b5bd55853d3933",
+    "matches_final_pdf": true,
+    "relative_path": "9-26-5422_What_Does_Multi_Turn_Rein.pdf",
+    "sha256": "83d0194bc8df126c8dd1864f80dae837c10f26d1ce81f79164b5bd55853d3933",
+    "status": "observed"
+  },
+  "schema_version": "ard-asset-ledger-v1",
+  "source_label": "original_research_workspace",
+  "warning": "Candidate files and summary scripts are not verified raw experiment provenance."
+}

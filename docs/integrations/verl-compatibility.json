@@ -1,0 +1,162 @@
+{
+  "schema_version": "ard-integration-matrix-v1",
+  "upstream": "https://github.com/verl-project/verl",
+  "candidate_commit": "cb91c8a275e3542edba5bf40ec02df6e7ca84e57",
+  "selection": "read_only_git_ls_remote_refs_heads_main",
+  "queried_on": "2026-09-28",
+  "candidate_status": "historical_candidate_not_tested",
+  "supported_commits": [],
+  "backend": "local_transformers_native_actor_and_single_rank_Ray_vllm_FSDP",
+  "gpu_test": "Qwen3-1.7B_RTX3090_two_real_updates_native_actor_and_Ray_2026-09-29",
+  "scope_specific_tests": [
+    {
+      "commit": "7dc46e834209948cf1cdd8a04d83f82b4a7efd24",
+      "verified_source_files": 437,
+      "source_lock": "src/agent_rl_diagnostics/resources/verl-7dc46e-lock.json",
+      "tested": [
+        "DataParallelPPOActor.compute_log_prob",
+        "DataParallelPPOActor.update_policy",
+        "checkpoint_dual_validation",
+        "diagnostics_on_off_update_parity",
+        "wandb_offline_history"
+      ],
+      "not_tested": [
+        "RayPPOTrainer",
+        "vLLM",
+        "FSDP",
+        "multi_rank",
+        "GRPO_training_acceptance",
+        "BudgetMix"
+      ],
+      "artifact": "runs/qwen17-native-actor-dev2/acceptance.json"
+    },
+    {
+      "commit": "7dc46e834209948cf1cdd8a04d83f82b4a7efd24",
+      "verified_source_files": 437,
+      "source_lock": "src/agent_rl_diagnostics/resources/verl-7dc46e-lock.json",
+      "tested": [
+        "RayPPOTrainer.fit_single_rank",
+        "vLLM_async_server_actual_generation",
+        "FSDP_one_rank_NO_SHARD_updates",
+        "multi_turn_token_masks_and_replay",
+        "completed_transfer_weight_versions",
+        "synchronous_HF_export_dual_validation",
+        "tensor_content_changes",
+        "native_and_wandb_offline_diagnostic_history"
+      ],
+      "not_tested": [
+        "multi_rank",
+        "full_Ray_diagnostics_on_off_optimizer_parity",
+        "optimizer_resume",
+        "standalone_same_export_output_parity",
+        "GRPO_training_acceptance",
+        "BudgetMix"
+      ],
+      "environment_snapshot": "requirements/verl-ray-candidate-py311-linux.txt",
+      "artifact": "runs/qwen17-ray-dev3/verification-final.json"
+    },
+    {
+      "commit": "7dc46e834209948cf1cdd8a04d83f82b4a7efd24",
+      "verified_source_files": 437,
+      "scope": "CPU_only_BudgetMix_pre_repeat_adapter",
+      "tested": [
+        "actual_RayPPOTrainer._get_gen_batch_without_trainer_construction",
+        "native_DataProto.repeat",
+        "local_Qwen3_tokenizer_budget_prompts",
+        "duplicate_task_occurrence_separation",
+        "infeasible_assignments_retained"
+      ],
+      "not_tested": [
+        "BudgetMix_GPU_training",
+        "PPO_critic",
+        "GiGPO_training",
+        "resume",
+        "new_WandB_history",
+        "multi_rank"
+      ],
+      "artifact": "runs/dev6-cpu-tools/native-budgetmix/verification.json"
+    },
+    {
+      "commit": "7dc46e834209948cf1cdd8a04d83f82b4a7efd24",
+      "verified_source_files": 437,
+      "scope": "A100_Qwen3_1.7B_single_rank_REINFORCE++_fixtures",
+      "tested": [
+        "fixed_budget_two_actual_updates",
+        "BudgetMix_two_actual_updates",
+        "actor_boundary_fingerprints",
+        "completed_BudgetMix_group_replay_and_native_WandB_histogram",
+        "same_Ray_export_standalone_CLI_bytewise_parity"
+      ],
+      "negative_results": [
+        "off_on_actor_RNG_fingerprints_differ_despite_matching_non_RNG_state_and_all_training_rollouts"
+      ],
+      "not_tested": [
+        "full_trainer_parity",
+        "controller_and_server_RNG",
+        "multi_rank",
+        "optimizer_resume",
+        "PPO_critic",
+        "GiGPO_training",
+        "paper_reproduction"
+      ],
+      "environment_snapshot": "requirements/verl-ray-candidate-py311-linux.txt",
+      "artifact": "runs/qwen17-remote-dev7/acceptance-v3/verification.json"
+    },
+    {
+      "commit": "7dc46e834209948cf1cdd8a04d83f82b4a7efd24",
+      "verified_source_files": 437,
+      "scope": "A100_single_rank_explicit_one_time_actor_seed_5422",
+      "tested": [
+        "one_time_pre_native_init_model_seed",
+        "four_actor_RNG_fingerprints_match_two_updates",
+        "fixed_and_BudgetMix_two_actual_updates",
+        "standalone_same_export_CLI_bytewise_parity",
+        "portable_core_raw_evidence_audit"
+      ],
+      "negative_results": [
+        "one_second_update_training_completion_differs_then_batch_gradient_parameters_optimizer_differ"
+      ],
+      "not_tested": [
+        "full_trainer_parity",
+        "controller_and_server_RNG",
+        "multi_rank",
+        "optimizer_resume",
+        "PPO_critic",
+        "GiGPO_training",
+        "paper_reproduction"
+      ],
+      "artifact": "runs/qwen17-seeded-dev8/acceptance-dev8-seeded/verification.json"
+    },
+    {
+      "commit": "7dc46e834209948cf1cdd8a04d83f82b4a7efd24",
+      "verified_source_files": 437,
+      "scope": "CPU_scripted_rollouts_tiny_random_GPT2_process_reward_update",
+      "tested": [
+        "GridAgentLoop_process_score",
+        "native_AgentLoopWorker_padding_and_rm_scores",
+        "native_REINFORCE++_advantages",
+        "native_DataParallelPPOActor_optimizer_update",
+        "validation_process_reward_disabled",
+        "generated_observation_padding_masks"
+      ],
+      "test_only_adaptation": "dp_actor.get_device_id returns torch.device(cpu)",
+      "not_tested": [
+        "RayPPOTrainer.fit_process_enabled",
+        "vLLM_generation",
+        "research_model_process_training",
+        "PPO_critic",
+        "GiGPO",
+        "multi_rank",
+        "resume",
+        "paper_reproduction"
+      ],
+      "artifact": "runs/dev10-verification/native-process/verification.json"
+    }
+  ],
+  "notes": [
+    "Candidate is a future integration target, not a compatibility claim.",
+    "Local verl-agent snapshot lacks a verified upstream commit and differs from current verl.",
+    "supported_commits stays empty for general/distributed compatibility; native actor and one-rank Ray support are slice-specific.",
+    "The native actor test imports a clean git archive, not the user's modified editable verl checkout."
+  ]
+}

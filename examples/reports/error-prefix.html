@@ -1,0 +1,53 @@
+<!doctype html><meta charset="utf-8"><title>Diagnostic comparison</title><style>body{max-width:960px;margin:2rem auto;font-family:system-ui}svg{width:100%;max-width:700px}pre{white-space:pre-wrap}</style><h1>Diagnostic comparison</h1><p>Descriptive results. Missing values are unavailable; panels have separate units.</p><h2>clean_success</h2><svg viewBox="0 0 600 240" role="img" aria-label="clean_success"><path d="M50 30V190H520" fill="none" stroke="black"/><text x="5" y="30">0.75</text><text x="5" y="190">0.5</text><text x="50" y="220">0</text><text x="500" y="220">0</text><circle cx="50.0" cy="190.0" r="5" fill="#247ba0"><title>Base: x=0, value=0.5</title></circle><circle cx="50.0" cy="40.0" r="5" fill="#e45756"><title>RL: x=0, value=0.75</title></circle></svg><p>condition; Base, RL. Hover each point for its label and value.</p><h2>error_success</h2><svg viewBox="0 0 600 240" role="img" aria-label="error_success"><path d="M50 30V190H520" fill="none" stroke="black"/><text x="5" y="30">0.5</text><text x="5" y="190">0.25</text><text x="50" y="220">1</text><text x="500" y="220">1</text><circle cx="50.0" cy="190.0" r="5" fill="#247ba0"><title>Base: x=1, value=0.25</title></circle><circle cx="50.0" cy="40.0" r="5" fill="#e45756"><title>RL: x=1, value=0.5</title></circle></svg><p>condition; Base, RL. Hover each point for its label and value.</p><h2>paired_delta_error_minus_clean</h2><svg viewBox="0 0 600 240" role="img" aria-label="paired_delta_error_minus_clean"><path d="M50 30V190H520" fill="none" stroke="black"/><text x="5" y="30">-0.25</text><text x="5" y="190">-0.25</text><text x="50" y="220">2</text><text x="500" y="220">2</text><circle cx="50.0" cy="190.0" r="5" fill="#247ba0"><title>Base: x=2, value=-0.25</title></circle><circle cx="50.0" cy="190.0" r="5" fill="#e45756"><title>RL: x=2, value=-0.25</title></circle></svg><p>condition; Base, RL. Hover each point for its label and value.</p><details><summary>Full data and exclusions</summary><pre>{
+  &quot;schema_version&quot;: &quot;ard-comparison-v1&quot;,
+  &quot;series&quot;: [
+    {
+      &quot;label&quot;: &quot;Base&quot;,
+      &quot;metric&quot;: &quot;clean_success&quot;,
+      &quot;x&quot;: 0,
+      &quot;x_unit&quot;: &quot;condition&quot;,
+      &quot;value&quot;: 0.5
+    },
+    {
+      &quot;label&quot;: &quot;Base&quot;,
+      &quot;metric&quot;: &quot;error_success&quot;,
+      &quot;x&quot;: 1,
+      &quot;x_unit&quot;: &quot;condition&quot;,
+      &quot;value&quot;: 0.25
+    },
+    {
+      &quot;label&quot;: &quot;Base&quot;,
+      &quot;metric&quot;: &quot;paired_delta_error_minus_clean&quot;,
+      &quot;x&quot;: 2,
+      &quot;x_unit&quot;: &quot;condition&quot;,
+      &quot;value&quot;: -0.25
+    },
+    {
+      &quot;label&quot;: &quot;RL&quot;,
+      &quot;metric&quot;: &quot;clean_success&quot;,
+      &quot;x&quot;: 0,
+      &quot;x_unit&quot;: &quot;condition&quot;,
+      &quot;value&quot;: 0.75
+    },
+    {
+      &quot;label&quot;: &quot;RL&quot;,
+      &quot;metric&quot;: &quot;error_success&quot;,
+      &quot;x&quot;: 1,
+      &quot;x_unit&quot;: &quot;condition&quot;,
+      &quot;value&quot;: 0.5
+    },
+    {
+      &quot;label&quot;: &quot;RL&quot;,
+      &quot;metric&quot;: &quot;paired_delta_error_minus_clean&quot;,
+      &quot;x&quot;: 2,
+      &quot;x_unit&quot;: &quot;condition&quot;,
+      &quot;value&quot;: -0.25
+    }
+  ],
+  &quot;scorer&quot;: null,
+  &quot;pool_hash&quot;: &quot;authored-pair&quot;,
+  &quot;interpretation&quot;: &quot;descriptive_comparison_no_significance_claim&quot;,
+  &quot;evidence_kind&quot;: &quot;demo_synthetic&quot;,
+  &quot;raw_validation_audited&quot;: false,
+  &quot;fixture_description&quot;: &quot;Authored metric-only illustration, not measured model outcomes.&quot;
+}</pre></details>

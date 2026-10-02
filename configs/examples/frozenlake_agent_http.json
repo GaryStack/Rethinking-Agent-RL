@@ -1,0 +1,55 @@
+{
+  "schema_version": "ard-agent-config-v1",
+  "protocol_id": "toolkit_v1",
+  "evidence_kind": "raw_recomputable",
+  "split": "smoke",
+  "model": {
+    "backend": "http",
+    "model_id": "replace-with-checkpoint-id",
+    "revision": "replace-with-checkpoint-revision",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "seed_support": "unknown",
+    "send_top_k": true,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "decoding": {
+    "temperature": 0.6,
+    "top_p": 0.9,
+    "top_k": 0,
+    "max_new_tokens": 256
+  },
+  "budgets": [
+    8
+  ],
+  "ks": [
+    1,
+    2
+  ],
+  "samples_per_task": 2,
+  "bootstrap_replicates": 200,
+  "seed": 5422,
+  "failure_policy": "fail",
+  "environment": "frozenlake_deterministic",
+  "tasks": [
+    {
+      "task_id": "smoke-open-grid",
+      "desc": [
+        "SFFF",
+        "FFFF",
+        "FFFF",
+        "FFFG"
+      ]
+    },
+    {
+      "task_id": "smoke-holes-grid",
+      "desc": [
+        "SFFF",
+        "FHHF",
+        "FFFF",
+        "FFFG"
+      ]
+    }
+  ]
+}

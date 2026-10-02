@@ -1,0 +1,12 @@
+{
+  "smoke-sum": {
+    "code": "print(sum(map(int, input().split())))",
+    "source": "independent_reference",
+    "revision": "authored-smoke-v1"
+  },
+  "smoke-max": {
+    "code": "import sys\nprint(max(map(int, sys.stdin.read().split())))",
+    "source": "independent_reference",
+    "revision": "authored-smoke-v1"
+  }
+}

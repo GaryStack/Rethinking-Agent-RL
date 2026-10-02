@@ -1,0 +1,28 @@
+[
+  {
+    "event_id": "base-event",
+    "task_id": "toy-task",
+    "trajectory_id": "base-trajectory",
+    "source": "base",
+    "success": true,
+    "prompt": "Toy prompt: ",
+    "response": "a b",
+    "action_span": [
+      2,
+      3
+    ]
+  },
+  {
+    "event_id": "rl-event",
+    "task_id": "toy-task",
+    "trajectory_id": "rl-trajectory",
+    "source": "rl",
+    "success": true,
+    "prompt": "Toy prompt: ",
+    "response": "a b",
+    "action_span": [
+      2,
+      3
+    ]
+  }
+]

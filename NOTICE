@@ -1,0 +1,9 @@
+Agent RL Diagnostics
+
+This preview contains original implementation code and standard MIT license text.
+No verl, RAGEN, rllm, benchmark datasets, model weights or private experiment
+artifacts are vendored. References to these projects do not change their licenses.
+
+Future code migrations must record the source revision, local modifications and
+required attribution before inclusion. The research-asset audit records observed
+availability; it does not grant redistribution permission.

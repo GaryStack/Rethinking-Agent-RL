@@ -1,0 +1,10 @@
+{
+  "task_ids": ["lookup", "retry"],
+  "samples_per_task": 1,
+  "protocol_id": "synthetic-tool-demo-v1",
+  "scorer_id": "authored-outcome-v1",
+  "dataset_id": "authored-two-task-fixture-v1",
+  "budget_unit": "tool_calls",
+  "budget_limit": 3,
+  "cost_unit": "USD"
+}

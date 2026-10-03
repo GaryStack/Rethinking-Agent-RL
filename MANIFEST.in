@@ -3,7 +3,7 @@ recursive-include .github *.yml
 recursive-include configs *.json
 recursive-include docs *.md *.json
 recursive-include paper *.md
-recursive-include examples *.py *.json *.html *.md
+recursive-include examples *.py *.json *.jsonl *.html *.md
 recursive-include scripts *.py
 recursive-include tests *.py
 recursive-include requirements *.txt

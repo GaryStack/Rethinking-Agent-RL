@@ -10,6 +10,7 @@
 | Dynamics | Checkpoint subprocess; pinned one-rank smoke; optional offline W&B | Full noninterference, multi-rank, resume |
 | BudgetMix | Sampler/audit; pinned one-rank REINFORCE++ smoke | PPO critic, GiGPO trainer, resume |
 | Process signal | Oracle/judge cache/mixing; locked tiny-model CPU update; two real 1.7B one-rank Ray/vLLM/FSDP updates | PPO/GiGPO training, multi-rank/resume |
+| Inspect logs | Optional pinned SDK reader, binary scores, native tool-loop case | Live-model acceptance, broad version compatibility |
 | Extension | Public external single-step scoring API | General built-in environment registration |
 
 No formal paper numerical reproduction is certified. `paper_v1` remains reserved.

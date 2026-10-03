@@ -19,3 +19,12 @@ single-step scorer interface, not automatic registration of a new built-in rollo
 error injector or exact budget solver. Reports for different scorer IDs cannot be
 combined on one axis. Callback users own persistence/provenance; these external
 results are not accepted by `ard audit` without a built-in replay adapter.
+
+For existing JSONL logs, the [external trace workflow](tutorials/external-traces.md)
+provides separate import, integrity/schema audit, comparison and offline reporting.
+It accepts recorded terminal outcomes, not arbitrary single-step scores, and never
+promotes them to built-in environment replay evidence.
+
+The optional [Inspect adapter](tutorials/inspect-agent.md) imports native .eval/JSON
+logs into the recorded-data workflow. A small executable inventory case exercises
+real tools and native logging with scripted responses by default.

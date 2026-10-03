@@ -1,31 +1,35 @@
 # Current status
 
-2026-10-02, `0.1.0.dev10`: local paper-companion/toolkit development preview.
+2026-10-03, `0.1.0.dev11`: local paper-companion / agent diagnostic preview.
+The agreed first-release method and lightweight tool scope is implemented.
 
-Available: Pass@(K,T), deterministic tight-budget solver, fixed-state quality,
-controlled error-prefix recovery, checkpoint dual validation, BudgetMix sampler
-and pinned integration, stdlib dynamics, likelihood NLL/LLR/length control,
-Base/RL/depth comparison reports, external scorer API, oracle/judge mixing and a
-CPU reward-to-optimizer example. The locked native reward/advantage/actor optimizer chain is CPU-verified on a tiny
-random model with scripted actions. A fresh authorized A100 also completed two
-process-enabled Qwen3-1.7B one-rank Ray/vLLM/FSDP REINFORCE++ updates. Native reward
-exports, terminal-only validation, real gradients and checkpoint changes were
-independently audited; see [GPU process verification](docs/verification/process-gpu.md).
+Available: Pass@(K,T), tight-budget evaluation, single-step/depth analysis,
+controlled error-prefix recovery, checkpoint dual validation, likelihood/NLL/LLR,
+BudgetMix, process-signal reward mixing and pinned training examples. Ordinary
+JSONL imports and optional Inspect native-log imports now support paired version
+reports, original-record inspection, resource coverage and CI regression gates.
+See [method coverage](paper/coverage.md), [support matrix](docs/support-matrix.md),
+[external logs](docs/tutorials/external-traces.md) and
+[Inspect integration](docs/tutorials/inspect-agent.md).
 
-Earlier real 1.7B Ray/vLLM/FSDP and BudgetMix tests are engineering smoke. The
-seeded off/on pair differs in one rollout and second-update state; full trainer
-noninterference is unverified. PPO/GiGPO training, multi-rank and resume remain open.
-Formal numerical reproduction is unverified. BFCL/SQL/Terminal are external inputs,
-not runnable bundled tasks. The new HF scorer passed tiny random-checkpoint alignment checks and one fixed response under local Qwen3-1.7B on CPU.
+Current core regression: **333 passed, 4 skipped**. Three skips require the opt-in
+Linux namespace executor; one requires the optional Inspect SDK. The prior isolated
+Inspect acceptance passed **27 tests**, including actual local tools and native
+.eval/JSON ingestion with scripted model responses. Its live-model entry point
+has not been accepted. See [Inspect evidence](docs/verification/inspect-adapter.md).
 
-Current CPU regression: 284 tests pass, 3 optional namespace
-tests skip. `ard toolkit-demo` creates ten audited agent-v2 evaluations and five
-reports in one offline command. Likelihood CLI now propagates excluded events
-into trajectory length control. See [toolkit verification](docs/verification/toolkit-walkthrough.md).
-Native process validation: [dev10 verification](docs/verification/dev10.md).
-Historical status is retained in [dev8 history](docs/verification/history/dev8-status.md).
-No remote repository, push, PyPI release or online W&B upload was performed.
+Real Qwen3-1.7B one-rank Ray/vLLM/FSDP process-enabled and BudgetMix smoke evidence
+is retained. These engineering checks do not establish method effectiveness or
+formal paper numerical reproduction. The seeded diagnostic off/on pair still
+has a rollout and second-update state difference; full trainer noninterference,
+PPO/GiGPO training, multi-rank and resume remain unverified. BFCL/SQL/Terminal
+remain external analysis inputs rather than bundled runnable benchmarks.
+See [process GPU evidence](docs/verification/process-gpu.md) and
+[historical dev10 status](docs/verification/history/dev10-status.md).
 
-Public-source links and metadata versions are checked by `scripts/check_source_release.py`.
-The Chinese entry point and changes are ready; authors/paper URL remain explicit
-placeholders. A local Git bundle is prepared without publishing; see [release](docs/release.md).
+The dev11 local release candidate includes the new trace and Inspect modules;
+older dev10 artifacts remain historical. See [release instructions](docs/release.md)
+and [dev11 checks](docs/verification/dev11.md). Author and paper metadata await
+confirmation; no individual or link is invented. No destination remote is configured,
+so public release and remote CI have not occurred. This is ready for local handoff,
+not a claim of full enterprise acceptance or paper numerical replication.

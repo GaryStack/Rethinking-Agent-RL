@@ -56,6 +56,34 @@ def _parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--version", action="version", version=__version__)
     sub = parser.add_subparsers(dest="command", required=True)
+    traces = sub.add_parser("traces", help="Import and compare caller-attested external JSONL")
+    trace_commands = traces.add_subparsers(dest="trace_command", required=True)
+    trace_import = trace_commands.add_parser("import")
+    trace_import.add_argument("--input", type=Path, required=True)
+    trace_import.add_argument("--design", type=Path, required=True)
+    trace_import.add_argument("--mapping", type=Path)
+    trace_import.add_argument("--label", required=True)
+    trace_import.add_argument("--output", type=Path, required=True)
+    trace_inspect = trace_commands.add_parser(
+        "inspect", help="Import a local Inspect .eval/.json log"
+    )
+    trace_inspect.add_argument("--input", type=Path, required=True)
+    trace_inspect.add_argument("--design", type=Path, required=True)
+    trace_inspect.add_argument("--scorer", required=True)
+    trace_inspect.add_argument("--label", required=True)
+    trace_inspect.add_argument("--output", type=Path, required=True)
+    trace_audit = trace_commands.add_parser("audit")
+    trace_audit.add_argument("--input", type=Path, required=True)
+    trace_compare = trace_commands.add_parser("compare")
+    trace_compare.add_argument("--base", type=Path, required=True)
+    trace_compare.add_argument("--candidate", type=Path, required=True)
+    trace_compare.add_argument("--output", type=Path, required=True)
+    trace_compare.add_argument("--seed", type=int, default=0)
+    trace_compare.add_argument(
+        "--min-delta",
+        type=float,
+        help="Minimum candidate-minus-base success-rate change; exit 1 on failure",
+    )
     walkthrough = sub.add_parser("toolkit-demo", help="Offline agent-v2 toolkit walkthrough")
     walkthrough.add_argument("--output", type=Path, required=True)
     likelihood = sub.add_parser("likelihood", help="Teacher-forced NLL/LLR mechanism analysis")
@@ -288,6 +316,38 @@ def _audit_run(
 
 
 def _execute(args: argparse.Namespace) -> dict[str, Any]:
+    if args.command == "traces":
+        from .external_traces import audit_traces, compare_traces, import_traces
+
+        if args.trace_command == "inspect":
+            from .integrations.inspect_logs import import_inspect
+
+            return import_inspect(
+                args.input,
+                scorer=args.scorer,
+                design=read_json(args.design),
+                label=args.label,
+                output=args.output,
+            )
+        if args.trace_command == "import":
+            return import_traces(
+                args.input,
+                read_json(args.design),
+                read_json(args.mapping) if args.mapping else {},
+                args.label,
+                args.output,
+            )
+        if args.trace_command == "audit":
+            _, _, summary = audit_traces(args.input)
+            return {
+                "status": "verified",
+                "checks": ["sha256", "schema", "metric_recomputation"],
+                "environment_replayed": False,
+                "summary": summary,
+            }
+        return compare_traces(
+            args.base, args.candidate, args.output, min_delta=args.min_delta, seed=args.seed
+        )
     if args.command == "toolkit-demo":
         from .toolkit_demo import run_toolkit_demo
 
@@ -674,4 +734,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(json.dumps({"error": type(exc).__name__, "message": str(exc)}), file=sys.stderr)
         return 2
     print(json.dumps(result, indent=2, sort_keys=True, allow_nan=False))
+    if args.command == "traces" and args.trace_command == "compare":
+        if result["gate"]["status"] in {"fail", "incomplete"}:
+            return 1
     return 0

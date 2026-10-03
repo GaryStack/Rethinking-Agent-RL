@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agent-rl-diagnostics"
-version = "0.1.0.dev10"
+version = "0.1.0.dev11"
 description = "Budget and decision-quality diagnostics for multi-turn agents"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -16,6 +16,7 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
+inspect = ["inspect-ai==0.3.275"]
 dev = ["pytest>=8,<10", "ruff==0.11.13"]
 hf = ["torch>=2.6,<3", "transformers>=4.57,<5"]
 tracking = ["wandb>=0.25,<0.26"]

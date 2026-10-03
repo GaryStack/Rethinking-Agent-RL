@@ -1,12 +1,25 @@
 # Agent RL Diagnostics
 
+## Start with your own data
+
+Already have agent logs? [Import JSONL and compare versions](docs/tutorials/external-traces.md)
+with `ard traces import/audit/compare`: matched-task success changes, token/time/cost
+coverage, per-task original records, and an optional CI regression gate. No GPU or
+training framework required. Imported outcomes remain caller-attested.
+
+- Inspect users → [native logs and executable tool case](docs/tutorials/inspect-agent.md).
+- Existing logs → [external trace tutorial](docs/tutorials/external-traces.md).
+- Run your model → [model quickstart](docs/quickstart.md).
+- Study training methods → [methods and coverage](paper/README.md).
+
+
 [中文说明](README.zh-CN.md) · [Changes](CHANGELOG.md)
 
 A paper companion and diagnostic toolkit for multi-turn agents: budget-dependent
 success, local decision quality, error-prefix recovery, training dynamics and
 BudgetMix. Python 3.11+; the core uses only the standard library.
 
-Development preview `0.1.0.dev10`. Start with the [quickstart](docs/quickstart.md)
+Development preview `0.1.0.dev11`. Start with the [quickstart](docs/quickstart.md)
 to evaluate your own model, or [paper methods and coverage](paper/README.md) to
 understand the accompanying methods. This release supplies method code and
 small authored examples; formal paper numerical reproduction is unverified.

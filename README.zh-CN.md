@@ -1,5 +1,15 @@
 # Agent RL Diagnostics
 
+## 从你自己的 Agent 开始
+
+已有运行日志？使用 `ard traces import/audit/compare` 导入 JSONL、比较两个版本，
+查看成功率变化、token/耗时/费用覆盖情况，并展开具体任务的原始记录。
+可设置回归阈值接入 CI；不需要 GPU 或训练框架。
+使用 Inspect 的用户还可[直接导入原生日志并运行工具调用案例](docs/tutorials/inspect-agent.md)。
+见[完整教程和可运行示例](docs/tutorials/external-traces.md)。
+导入结果只验证格式、完整性和指标计算，不代表环境重放或结果真实性认证。
+
+
 用于多轮智能体的论文配套代码和诊断工具。Python 3.11+，核心仅依赖标准库。
 [English](README.md) · [方法覆盖](paper/coverage.md) · [支持范围](docs/support-matrix.md)
 

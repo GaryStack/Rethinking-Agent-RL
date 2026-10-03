@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Cite this software and the accompanying paper when publication metadata is available."
 type: software
 title: "Agent RL Diagnostics"
-version: "0.1.0.dev10"
+version: "0.1.0.dev11"
 authors:
   - name: "Agent RL Diagnostics contributors"
 license: MIT

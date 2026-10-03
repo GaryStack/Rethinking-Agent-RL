@@ -29,8 +29,21 @@ jobs:
       - run: ard likelihood analyze --base examples/likelihood/base-scores.json --rl examples/likelihood/rl-scores.json --token-caliper 0.2 --step-caliper 1 --output runs/ci-likelihood
       - run: python examples/process_signal_training.py --coefficient 0.5
       - run: python examples/external_scorer.py
+      - run: ard traces import --input examples/external-traces/base.jsonl --design examples/external-traces/design.json --label base --output runs/ci-traces-base
+      - run: ard traces import --input examples/external-traces/candidate.jsonl --design examples/external-traces/design.json --label candidate --output runs/ci-traces-candidate
+      - run: ard traces audit --input runs/ci-traces-base
+      - run: ard traces compare --base runs/ci-traces-base --candidate runs/ci-traces-candidate --min-delta 0 --output runs/ci-traces-comparison
       - run: python examples/dynamics_fixture.py --output runs/ci-dynamics-fixture
       - run: python scripts/verify_process_signal_cpu.py --help
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e '.[dev,inspect]'
+      - run: python -m pytest tests/test_inspect_logs.py -q
   wheel:
     runs-on: ubuntu-latest
     steps:

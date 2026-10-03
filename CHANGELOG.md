@@ -1,5 +1,25 @@
 # Changes
 
+## 0.1.0.dev11 — 2026-10-03
+
+- Refresh the committed local release candidate, status and package handoff.
+- Preserve pending author/paper metadata and all documented research limitations.
+
+- Add optional native Inspect .eval/JSON import with explicit scorer selection,
+  epoch/slot validation, unknown-resource preservation and original log hashes.
+- Add a local inventory tool-loop case with an optional live-model entry point;
+  scripted offline acceptance is not real-model efficacy evidence.
+- Add a separate optional native-runtime CI job; core dependencies remain empty.
+
+### External trace workflow
+
+- Add stdlib JSONL import with explicit field mapping and declared expected slots.
+- Recompute imported artifacts without claiming environment replay.
+- Compare matched versions with task-bootstrap deltas, resource coverage, offline
+  per-task source records and point-estimate CI gates.
+- Add a synthetic tool-retry walkthrough; no real-agent efficacy claim.
+
+
 ## 0.1.0.dev10 — local development preview
 
 The first preview is a paper companion and diagnostic toolkit. It supplies

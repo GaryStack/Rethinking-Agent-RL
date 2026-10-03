@@ -1,0 +1,2 @@
+{"task_id":"lookup","sample_id":0,"status":"completed","success":true,"tokens":100,"latency_seconds":1.2,"cost":0.001,"trace":[{"tool":"lookup","output":"found"}]}
+{"task_id":"retry","sample_id":0,"status":"task_failure","success":false,"tokens":80,"latency_seconds":1.0,"cost":0.0008,"trace":[{"tool":"lookup","output":"temporary error"},{"action":"stopped"}]}

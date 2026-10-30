@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="458" viewBox="0 0 1200 458" role="img" aria-labelledby="title description">
+  <title id="title">Rethinking Agentic RL: evaluate, diagnose, improve</title>
+  <desc id="description">Conceptual overview without experimental data. Evaluate sampling breadth K and interaction depth T with Pass@(K,T). Diagnose matched-state decisions, error recovery, training dynamics and likelihood. Test BudgetMix RL and process rewards.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#858b87" stroke-width="1.4"/></marker>
+  </defs>
+  <rect width="1200" height="458" rx="16" fill="#f8f7f3"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#26312f">
+    <text x="32" y="40" font-size="14" letter-spacing="2.4" fill="#24725d">RETHINKING AGENTIC RL</text>
+    <text x="32" y="89" font-family="Georgia, 'Times New Roman', serif" font-size="38">What improves when an agent succeeds?</text>
+    <text x="32" y="122" font-size="19" fill="#606964">Look beyond final success: budgets, decisions, and recovery.</text>
+
+    <rect x="32" y="155" width="352" height="247" rx="12" fill="#fffefd" stroke="#dddcd5"/>
+    <rect x="424" y="155" width="352" height="247" rx="12" fill="#fffefd" stroke="#dddcd5"/>
+    <rect x="816" y="155" width="352" height="247" rx="12" fill="#fffefd" stroke="#dddcd5"/>
+    <path d="M392 279 H416 M784 279 H808" fill="none" stroke="#858b87" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <text x="54" y="188" font-size="13" letter-spacing="1.8" fill="#627887">01 / EVALUATE</text>
+    <text x="54" y="222" font-family="Georgia, 'Times New Roman', serif" font-size="25">Two budget dimensions</text>
+    <rect x="54" y="242" width="143" height="65" rx="7" fill="#edf1f3"/>
+    <rect x="213" y="242" width="149" height="65" rx="7" fill="#f7ecee"/>
+    <text x="67" y="269" font-size="22" font-weight="bold" fill="#627887">K</text>
+    <text x="67" y="291" font-size="15" fill="#627887">Trajectories</text>
+    <text x="226" y="269" font-size="22" font-weight="bold" fill="#8b2834">T</text>
+    <text x="226" y="291" font-size="15" fill="#8b2834">Turn limit</text>
+    <text x="54" y="343" font-size="24" font-weight="bold">Pass@(K,T)</text>
+    <text x="54" y="373" font-size="15" fill="#606964">Does the gain survive a tighter budget?</text>
+
+    <text x="446" y="188" font-size="13" letter-spacing="1.8" fill="#8b2834">02 / DIAGNOSE</text>
+    <text x="446" y="222" font-family="Georgia, 'Times New Roman', serif" font-size="26">Where do gains arise?</text>
+    <circle cx="451" cy="255" r="3" fill="#8b2834"/>
+    <text x="465" y="261" font-size="18">Matched-state decision quality</text>
+    <circle cx="451" cy="289" r="3" fill="#8b2834"/>
+    <text x="465" y="295" font-size="18">Error-prefix recovery</text>
+    <circle cx="451" cy="323" r="3" fill="#8b2834"/>
+    <text x="465" y="329" font-size="18">Checkpoint training dynamics</text>
+    <text x="446" y="373" font-size="16" fill="#606964">Mechanism lens: likelihood / NLL / LLR</text>
+
+    <text x="838" y="188" font-size="13" letter-spacing="1.8" fill="#24725d">03 / TEST METHODS</text>
+    <text x="838" y="222" font-family="Georgia, 'Times New Roman', serif" font-size="26">BudgetMix RL</text>
+    <text x="838" y="253" font-size="17" fill="#606964">Vary budgets across task groups.</text>
+    <path d="M838 278 H1146" stroke="#e3e5dd"/>
+    <text x="838" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="26">Process signals</text>
+    <text x="838" y="341" font-size="17" fill="#606964">Mix explicit step-level rewards.</text>
+    <text x="838" y="373" font-size="16" fill="#24725d">Evaluate under shared protocols.</text>
+
+    <text x="32" y="433" font-size="13" fill="#747b76">Conceptual overview · no experimental results plotted</text>
+  </g>
+</svg>

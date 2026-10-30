@@ -1,4 +1,4 @@
-# Local preview release
+# Source publication and local preview release
 
 Current candidate: **0.1.0.dev11**, prepared on 2026-10-03. This version includes
 external JSONL analysis and optional native Inspect ingestion. It is a paper
@@ -56,12 +56,15 @@ review remains necessary. Do not scan/copy the original private research trees.
 
 Author names and the paper link are intentionally pending. `CITATION.cff` keeps
 the explicit collective placeholder; only its software version was updated.
-The destination remote and final public version also await the author's choice.
-Once supplied, update metadata, rerun the source check and rebuild packages from
-that exact commit before publication.
+The source destination is [GaryStack/Rethinking-Agent-RL](https://github.com/GaryStack/Rethinking-Agent-RL).
+The final public package version remains pending. Before a package release, update
+metadata, rerun the source check and rebuild packages from that exact commit.
 
-The repository currently has no remote. Public hosting, GitHub Actions execution
-and package upload are therefore not part of this local acceptance. CI configuration
+The October 3 local acceptance predates GitHub publication. Its files in `dist/`
+remain historical local artifacts; the GitHub source includes subsequent README
+and publication metadata updates. These local archives are not uploaded by a Git
+push. GitHub Actions results must be checked separately after pushing; PyPI
+publication is not part of this source handoff. CI configuration
 includes the stdlib Python matrix, isolated wheel checks and a separate pinned
 Inspect native-runtime job. Their local equivalents are recorded in verification;
 remote results must be observed after an authorized push.

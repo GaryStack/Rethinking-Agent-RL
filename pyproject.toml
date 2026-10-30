@@ -15,6 +15,10 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 
+[project.urls]
+Repository = "https://github.com/GaryStack/Rethinking-Agent-RL"
+Issues = "https://github.com/GaryStack/Rethinking-Agent-RL/issues"
+
 [project.optional-dependencies]
 inspect = ["inspect-ai==0.3.275"]
 dev = ["pytest>=8,<10", "ruff==0.11.13"]

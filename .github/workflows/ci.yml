@@ -62,5 +62,6 @@ jobs:
       - run: /tmp/ard-clean/bin/ard compare --input /tmp/ard-wheel-demo --labels Synthetic --output /tmp/ard-wheel-comparison
       - run: /tmp/ard-clean/bin/ard likelihood analyze --base examples/likelihood/base-scores.json --rl examples/likelihood/rl-scores.json --token-caliper 0.2 --step-caliper 1 --output /tmp/ard-wheel-likelihood
       - run: python scripts/check_release_archive.py dist/agent_rl_diagnostics-*.whl
+      - run: python -m pip install "setuptools>=68" wheel
       - run: python -c 'from setuptools.build_meta import build_sdist; build_sdist("dist")'
       - run: python scripts/check_release_archive.py dist/agent_rl_diagnostics-*.tar.gz

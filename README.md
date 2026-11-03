@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Rethinking Agentic RL</h1>
+<h1><img src="docs/assets/logo.svg" width="40" height="40" alt="Project logo"> Rethinking Agentic RL</h1>
 <p><strong>What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</strong></p>
 
 <p>
@@ -13,7 +13,8 @@
 
 <p>
 <a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">🚀 Getting Started</a><br>
-<a href="#contact">💬 Contact</a> • <a href="#citation">📝 Citation</a>
+<a href="#choose-your-workflow">🧭 Choose Your Workflow</a> • <a href="#diagnostic-tools">🧰 Diagnostic Tools</a> • <a href="#support">✅ Support and Verification</a><br>
+<a href="#repository-guide">🗂️ Repository Guide</a> • <a href="#citation">📝 Citation</a> • <a href="#contact">💬 Contact</a>
 </p>
 <p><a href="README.md">English</a> · <a href="README.zh-CN.md">中文</a></p>
 </div>
@@ -61,6 +62,8 @@ The demo uses **scripted policies**, including its Base/RL labels. After
 installation, it needs no GPU, model weights, or network access. Use a fresh output
 directory for each run. This demo does not validate training checkpoints.
 See the [CPU walkthrough](docs/tutorials/offline-toolkit.md).
+
+<a id="choose-your-workflow"></a>
 
 ### 🧭 Choose Your Workflow
 

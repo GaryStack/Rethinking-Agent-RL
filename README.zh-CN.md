@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Rethinking Agentic RL</h1>
+<h1><img src="docs/assets/logo.svg" width="40" height="40" alt="Project logo"> Rethinking Agentic RL</h1>
 <p><strong>What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</strong></p>
 
 <p>
@@ -13,7 +13,8 @@
 
 <p>
 <a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">🚀 Getting Started</a><br>
-<a href="#contact">💬 Contact</a> • <a href="#citation">📝 Citation</a>
+<a href="#choose-your-workflow">🧭 Choose Your Workflow</a> • <a href="#diagnostic-tools">🧰 Diagnostic Tools</a> • <a href="#support">✅ Support and Verification</a><br>
+<a href="#repository-guide">🗂️ Repository Guide</a> • <a href="#citation">📝 Citation</a> • <a href="#contact">💬 Contact</a>
 </p>
 <p><a href="README.md">English</a> · <a href="README.zh-CN.md">中文</a></p>
 </div>
@@ -58,6 +59,8 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 
 示例使用**脚本策略**，Base/RL 标签不代表训练后的模型。安装完成后无需 GPU、模型权重或网络。
 每次运行请使用新的输出目录。这个演示不验证训练 checkpoint，详见 [CPU 完整教程](docs/tutorials/offline-toolkit.md)。
+
+<a id="choose-your-workflow"></a>
 
 ### 🧭 选择你的使用入口
 

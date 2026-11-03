@@ -61,6 +61,10 @@ def check(root):
         if path.is_symlink() or path.stat().st_size > 2_000_000:
             errors.append(f"linked or large public file: {name}")
             continue
+        if name in {"docs/assets/paper-fig1.png", "docs/assets/findings-overview.png"}:
+            if not path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
+                errors.append(f"invalid PNG asset: {name}")
+            continue
         try:
             content = path.read_text(encoding="utf-8")
         except UnicodeError:

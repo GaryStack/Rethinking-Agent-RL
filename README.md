@@ -1,47 +1,47 @@
 <div align="center">
 
 <h1>Rethinking Agentic RL</h1>
-
-<p><strong>What does multi-turn reinforcement learning really improve in LLM agents?</strong></p>
-<p>Evaluate across interaction budgets. Diagnose decisions and recovery. Test BudgetMix RL.</p>
+<p><strong>What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</strong></p>
 
 <p>
-  <a href="#overview">Overview</a> ·
-  <a href="#quickstart">Quickstart</a> ·
-  <a href="#diagnostic-tools">Tools</a> ·
-  <a href="paper/README.md">Method coverage</a> ·
-  <a href="README.zh-CN.md">中文</a>
+<a href="https://arxiv.org/abs/2608.03573"><img src="https://img.shields.io/badge/arXiv-2608.03573-b31b1b?logo=arxiv" alt="arXiv"></a>
+<a href="https://rethinking-agentic-rl.github.io/"><img src="https://img.shields.io/badge/Project-Page-24725d?logo=googlechrome&amp;logoColor=white" alt="Project Page"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></a>
+<a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.11+"></a>
+<a href="https://github.com/GaryStack/Rethinking-Agent-RL/actions/workflows/ci.yml"><img src="https://github.com/GaryStack/Rethinking-Agent-RL/actions/workflows/ci.yml/badge.svg" alt="CPU core CI"></a>
+<a href="https://github.com/GaryStack/Rethinking-Agent-RL/stargazers"><img src="https://img.shields.io/github/stars/GaryStack/Rethinking-Agent-RL?style=social" alt="GitHub stars"></a>
 </p>
 
-<p>Python 3.11+ · Standard-library core · MIT · Development preview</p>
-
+<p>
+<a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">✨ Getting Started</a><br>
+<a href="#contact">📨 Contact</a> • <a href="#citation">🎈 Citation</a> • <a href="#star-history">⭐ Star History</a>
+</p>
+<p><a href="README.md">English</a> · <a href="README.zh-CN.md">中文</a></p>
 </div>
 
-![Conceptual overview: evaluate sampling breadth K and turn budget T; diagnose matched-state quality, error recovery and training dynamics; test BudgetMix and process rewards.](docs/assets/research-overview.svg)
+![Figure 1. Overview of our findings: budget-dependent trajectory gains, error recovery, and long-horizon resilience.](docs/assets/paper-fig1.png)
 
-## Overview
+<a id="news"></a>
 
-A higher final success rate leaves an important question unanswered: **did the
-agent make better decisions, or did it become better at recovering over more turns?**
-This work studies multi-turn agentic RL through both sampling breadth **K** and
-interaction depth **T**, using **Pass@(K,T)**: the probability that at least one of
-K sampled trajectories succeeds within T interaction turns.
+## 🎉 News
 
-The accompanying study highlights three observations:
+- **2026-10-30** — Code, diagnostic tools, and tutorials are now public.
 
-- **Gains depend on the budget.** Trajectory-level advantages can shrink or reverse when interaction budgets tighten.
-- **Step-level improvements are uneven.** RL's strengths concentrate in error recovery and later stages of long-horizon trajectories.
-- **Local and trajectory-level behavior can diverge.** Likelihood analysis and checkpoint monitoring help examine how locally plausible actions compose into successful trajectories.
+<a id="overview"></a>
 
-These observations motivate **BudgetMix RL**, which varies interaction budgets
-across training task groups, alongside an exploration of process-supervision signals.
+## 📖 Overview
 
-This repository provides the **Agent RL Diagnostics** package (`ard`): method
-implementations, reusable diagnostic tools, and small runnable examples. The study
-findings above are research context; the examples and engineering checks here do
-not reproduce the paper's benchmark numbers. See [method coverage](paper/coverage.md).
+While multi-turn agentic reinforcement learning (RL) excels on long-horizon tasks, its performance gains remain **highly sensitive to interaction constraints**. Evaluating across sampling breadth **K** and interaction depth **T** via **Pass@(K,T)**, we show that trajectory-level RL advantages depend on sufficient turn budgets, diminishing significantly when budgets tighten. Besides, agentic RL does not uniformly elevate single-step decision quality; rather, its strength concentrates in **error recovery and long-horizon resilience**.
 
-## Quickstart
+To mitigate the deployment risks caused by this budget dependence, we provide a preliminary discussion on the benefits and limitations of process supervision signals and introduce **BudgetMix RL** as an alternative that varies interaction budgets during training. Experiments demonstrate that BudgetMix RL achieves robust performance across diverse execution settings.
+
+[![Overview of our findings: Pass@K, Pass@T, step-level quality, mechanisms, and preliminary discussion.](docs/assets/findings-overview.png)](https://rethinking-agentic-rl.github.io/#overview)
+
+This repository provides the accompanying method implementations and diagnostic tools. Its examples and engineering checks are not numerical reproductions of the paper benchmarks; see [method coverage](paper/coverage.md).
+
+<a id="getting-started"></a>
+
+## ✨ Getting Started
 
 From a source checkout, with Python 3.11 or newer:
 
@@ -63,7 +63,7 @@ installation, it needs no GPU, model weights, or network access. Use a fresh out
 directory for each run. This demo does not validate training checkpoints.
 See the [CPU walkthrough](docs/tutorials/offline-toolkit.md).
 
-### Choose your workflow
+### 🧭 Choose Your Workflow
 
 | Your goal | Start here |
 |---|---|
@@ -75,7 +75,9 @@ See the [CPU walkthrough](docs/tutorials/offline-toolkit.md).
 Core evaluation and JSONL analysis use only the Python standard library.
 Local Transformers inference, Inspect, and training integrations are optional.
 
-## Diagnostic tools
+<a id="diagnostic-tools"></a>
+
+## 🧰 Diagnostic Tools
 
 | Tool | Question it answers | Entry and tutorial |
 |---|---|---|
@@ -94,7 +96,9 @@ samples and infrastructure failures rather than silently treating them as task
 failures or successes. Historical trace imports preserve caller-reported outcomes;
 they do not establish controlled recovery or independently verify task success.
 
-## Support and verification
+<a id="support"></a>
+
+## ✅ Support and Verification
 
 Current preview: **`0.1.0.dev11`**.
 
@@ -116,7 +120,9 @@ See [current status](STATUS.md), [support matrix](docs/support-matrix.md),
 [preview verification](docs/verification/dev11.md), and
 [GPU process verification](docs/verification/process-gpu.md) for details.
 
-## Repository guide
+<a id="repository-guide"></a>
+
+## 🗂️ Repository Guide
 
 | Path | Contents |
 |---|---|
@@ -139,11 +145,25 @@ Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).
 Preview changes and publishing steps are in the [changelog](CHANGELOG.md) and
 [release guide](docs/release.md).
 
-## License and citation
+<a id="citation"></a>
+
+## 🎈 License and Citation
 
 Original code is released under the [MIT license](LICENSE). Third-party assets
 retain their own terms; see [NOTICE](NOTICE). Model weights, private benchmark
 tests, original traces, and full experiment results are not bundled.
 
 Software citation metadata is in [CITATION.cff](CITATION.cff).
-Author names and the paper link will be added when finalized.
+Final author and paper citation metadata will be added when finalized.
+
+<a id="contact"></a>
+
+## 📨 Contact
+
+For questions and feedback, please open an [issue](https://github.com/GaryStack/Rethinking-Agent-RL/issues).
+
+<a id="star-history"></a>
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=GaryStack/Rethinking-Agent-RL&type=Date)](https://star-history.com/#GaryStack/Rethinking-Agent-RL&Date)

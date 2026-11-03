@@ -1,43 +1,47 @@
 <div align="center">
 
 <h1>Rethinking Agentic RL</h1>
-
-<p><strong>多轮强化学习究竟改善了 LLM 智能体的什么能力？</strong></p>
-<p>在不同交互预算下评测，诊断决策与错误恢复，测试 BudgetMix RL。</p>
+<p><strong>What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</strong></p>
 
 <p>
-  <a href="#研究概览">研究概览</a> ·
-  <a href="#快速开始">快速开始</a> ·
-  <a href="#诊断工具">诊断工具</a> ·
-  <a href="paper/README.md">方法覆盖</a> ·
-  <a href="README.md">English</a>
+<a href="https://arxiv.org/abs/2608.03573"><img src="https://img.shields.io/badge/arXiv-2608.03573-b31b1b?logo=arxiv" alt="arXiv"></a>
+<a href="https://rethinking-agentic-rl.github.io/"><img src="https://img.shields.io/badge/Project-Page-24725d?logo=googlechrome&amp;logoColor=white" alt="Project Page"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></a>
+<a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.11+"></a>
+<a href="https://github.com/GaryStack/Rethinking-Agent-RL/actions/workflows/ci.yml"><img src="https://github.com/GaryStack/Rethinking-Agent-RL/actions/workflows/ci.yml/badge.svg" alt="CPU core CI"></a>
+<a href="https://github.com/GaryStack/Rethinking-Agent-RL/stargazers"><img src="https://img.shields.io/github/stars/GaryStack/Rethinking-Agent-RL?style=social" alt="GitHub stars"></a>
 </p>
 
-<p>Python 3.11+ · 核心仅依赖标准库 · MIT · 开发预览版</p>
-
+<p>
+<a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">✨ Getting Started</a><br>
+<a href="#contact">📨 Contact</a> • <a href="#citation">🎈 Citation</a> • <a href="#star-history">⭐ Star History</a>
+</p>
+<p><a href="README.md">English</a> · <a href="README.zh-CN.md">中文</a></p>
 </div>
 
-![概念图：从采样次数 K 和交互轮数 T 出发，诊断同状态决策质量、错误恢复与训练动态，再测试 BudgetMix 和过程奖励。图中不包含实验数值。](docs/assets/research-overview.svg)
+![Figure 1. Overview of our findings: budget-dependent trajectory gains, error recovery, and long-horizon resilience.](docs/assets/paper-fig1.png)
 
-## 研究概览
+<a id="news"></a>
 
-最终成功率提高之后，还有一个问题：**智能体每一步做得更好了，还是更擅长在更多轮交互中纠错？**
-我们从采样广度 **K** 和交互深度 **T** 两个维度研究多轮 agentic RL。
-**Pass@(K,T)** 衡量：采样 K 条轨迹，其中至少一条在 T 轮交互内成功的概率。
+## 🎉 News
 
-配套研究关注三个发现：
+- **2026-10-30** — 代码、诊断工具和使用教程已开源。
 
-- **收益依赖预算。** 交互预算收紧时，轨迹级优势可能缩小，甚至反转。
-- **单步改善并不均匀。** RL 的优势更集中在错误恢复和长轨迹的后期阶段。
-- **局部行为与整条轨迹可能不同步。** Likelihood 分析和 checkpoint 监测帮助解释：局部合理的动作如何组合成成功轨迹。
+<a id="overview"></a>
 
-由此引出 **BudgetMix RL**：在训练任务组之间改变交互预算，并进一步探索过程监督信号。
+## 📖 研究概览
 
-本仓库提供 **Agent RL Diagnostics** 包（命令行入口 `ard`），包含方法实现、可复用诊断工具和小型可运行示例。
-上述发现属于研究背景；仓库中的示例和工程验证没有重新复现论文 benchmark 数值。
-详见[方法覆盖](paper/coverage.md)。
+多轮 agentic 强化学习（RL）在长程任务上表现突出，但其性能收益对**交互约束高度敏感**。我们通过 **Pass@(K,T)**，从采样广度 **K** 和交互深度 **T** 两个维度进行评测，发现轨迹级 RL 优势依赖充足的交互预算，预算收紧时收益显著减弱。此外，agentic RL 并未一致提升单步决策质量，其优势更集中于**错误恢复和长程鲁棒性**。
 
-## 快速开始
+为缓解这种预算依赖带来的部署风险，我们初步讨论过程监督信号的收益与局限，并提出 **BudgetMix RL**，在训练中改变交互预算。论文实验表明，BudgetMix RL 在不同执行设置下具有稳健表现。
+
+[![Overview of our findings: Pass@K, Pass@T, step-level quality, mechanisms, and preliminary discussion.](docs/assets/findings-overview.png)](https://rethinking-agentic-rl.github.io/#overview)
+
+本仓库提供论文方法实现与诊断工具；示例和工程测试不代表论文 benchmark 数值复现。详见[方法覆盖](paper/coverage.md)。
+
+<a id="getting-started"></a>
+
+## ✨ 快速开始
 
 在源码仓库根目录运行，要求 Python 3.11 或更新版本：
 
@@ -56,7 +60,7 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 示例使用**脚本策略**，Base/RL 标签不代表训练后的模型。安装完成后无需 GPU、模型权重或网络。
 每次运行请使用新的输出目录。这个演示不验证训练 checkpoint，详见 [CPU 完整教程](docs/tutorials/offline-toolkit.md)。
 
-### 选择你的使用入口
+### 🧭 选择你的使用入口
 
 | 你的目标 | 从这里开始 |
 |---|---|
@@ -67,7 +71,9 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 
 核心评测和 JSONL 分析仅依赖 Python 标准库；本地 Transformers 推理、Inspect 和训练接入均为可选依赖。
 
-## 诊断工具
+<a id="diagnostic-tools"></a>
+
+## 🧰 诊断工具
 
 | 工具 | 回答什么问题 | 入口与教程 |
 |---|---|---|
@@ -84,7 +90,9 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 对比复用冻结输入和已记录的协议；缺失样本、基础设施失败保持可见，不会被悄悄改成任务失败或成功。
 历史日志导入保留调用方报告的结果，不代表受控错误恢复实验，也不独立认证任务成功。
 
-## 支持范围与验证
+<a id="support"></a>
+
+## ✅ 支持范围与验证
 
 当前预览版：**`0.1.0.dev11`**。
 
@@ -103,7 +111,9 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 详见[当前状态](STATUS.md)、[支持矩阵](docs/support-matrix.md)、
 [预览版验证](docs/verification/dev11.md)与 [GPU process 验证](docs/verification/process-gpu.md)。
 
-## 仓库导航
+<a id="repository-guide"></a>
+
+## 🗂️ 仓库导航
 
 | 路径 | 内容 |
 |---|---|
@@ -125,9 +135,23 @@ ruff format --check src tests scripts examples
 欢迎贡献，见 [CONTRIBUTING.md](CONTRIBUTING.md)。版本变化与发布步骤见
 [CHANGELOG](CHANGELOG.md) 和[发布指南](docs/release.md)。
 
-## 许可证与引用
+<a id="citation"></a>
+
+## 🎈 许可证与引用
 
 原创代码采用 [MIT 许可证](LICENSE)，第三方资产保留各自条款，见 [NOTICE](NOTICE)。
 仓库不包含模型权重、私有 benchmark 测试、原始轨迹或完整实验结果。
 
-软件引用元数据见 [CITATION.cff](CITATION.cff)，作者与论文链接待最终确认后补充。
+软件引用元数据见 [CITATION.cff](CITATION.cff)，最终作者与论文引用元数据待确认后补充。
+
+<a id="contact"></a>
+
+## 📨 Contact
+
+欢迎通过 [issue](https://github.com/GaryStack/Rethinking-Agent-RL/issues).
+
+<a id="star-history"></a>
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=GaryStack/Rethinking-Agent-RL&type=Date)](https://star-history.com/#GaryStack/Rethinking-Agent-RL&Date)

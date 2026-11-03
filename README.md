@@ -57,10 +57,8 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 
 Open `runs/toolkit-walkthrough/index.html` to explore five comparison reports:
 budget-dependent success, matched-state quality, error-state quality, recovery,
-and Base-monitor pool comparison. Every underlying run is audited before
-reporting. The walkthrough also creates a BudgetMix sampling plan.
-
-The demo uses **scripted policies**, including its Base/RL labels. After
+and etc. Every underlying run is audited before
+reporting. The demo uses **scripted policies**, including its Base/RL labels. After
 installation, it needs no GPU, model weights, or network access. Use a fresh output
 directory for each run. This demo does not validate training checkpoints.
 See the [CPU walkthrough](docs/tutorials/offline-toolkit.md).

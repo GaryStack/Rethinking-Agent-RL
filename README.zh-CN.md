@@ -13,7 +13,7 @@
 
 <p>
 <a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">🚀 Getting Started</a><br>
-<a href="#choose-your-workflow">🧭 Choose Your Workflow</a> • <a href="#diagnostic-tools">🧰 Diagnostic Tools</a> • <a href="#support">✅ Support and Verification</a><br>
+<a href="#choose-your-workflow">🧭 Choose Your Workflow</a> • <a href="#diagnostic-tools">🧰 Diagnostic Tools</a><br>
 <a href="#repository-guide">🗂️ Repository Guide</a> • <a href="#citation">📝 Citation</a> • <a href="#contact">💬 Contact</a>
 </p>
 <p><a href="README.md">English</a> · <a href="README.zh-CN.md">中文</a></p>
@@ -91,27 +91,6 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 
 对比复用冻结输入和已记录的协议；缺失样本、基础设施失败保持可见，不会被悄悄改成任务失败或成功。
 历史日志导入保留调用方报告的结果，不代表受控错误恢复实验，也不独立认证任务成功。
-
-<a id="support"></a>
-
-## ✅ 支持范围与验证
-
-当前预览版：**`0.1.0.dev11`**。
-
-| 项目 | 当前范围 |
-|---|---|
-| 可执行环境 | 确定性 FrozenLake 和派生 stdin/stdout coding；coding 需要受限 Linux namespace executor |
-| 外部数据 | 通用 JSONL 和可选 Inspect 日志；BFCL、SQL、Terminal 仅作外部分析输入，未打包完整 benchmark 环境 |
-| 训练接入 | 锁定 VeRL 版本的有限单 rank 验收；完整 PPO/GiGPO 训练、多 rank 和 optimizer resume 尚未验收 |
-| 论文复现 | 方法代码已提供，完整 benchmark 数值复现尚未验证 |
-
-最近一轮 CPU 回归记录为 **333 通过、4 跳过**；独立的可选 Inspect 验收记录为 **27 通过**。
-真实 **Qwen3-1.7B** 单 rank Ray/vLLM/FSDP 工程验证包含 BudgetMix 和两步 process-enabled REINFORCE++ 更新。
-这些记录验证指定执行路径，不代表方法效果。已保留 seeded diagnostic off/on 对照中一条 rollout 和第二次更新状态的差异；
-完整 trainer 无干扰性仍未验证。
-
-详见[当前状态](STATUS.md)、[支持矩阵](docs/support-matrix.md)、
-[预览版验证](docs/verification/dev11.md)与 [GPU process 验证](docs/verification/process-gpu.md)。
 
 <a id="repository-guide"></a>
 

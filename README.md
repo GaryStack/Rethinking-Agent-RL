@@ -13,7 +13,7 @@
 
 <p>
 <a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">🚀 Getting Started</a><br>
-<a href="#choose-your-workflow">🧭 Choose Your Workflow</a> • <a href="#diagnostic-tools">🧰 Diagnostic Tools</a> • <a href="#support">✅ Support and Verification</a><br>
+<a href="#choose-your-workflow">🧭 Choose Your Workflow</a> • <a href="#diagnostic-tools">🧰 Diagnostic Tools</a><br>
 <a href="#repository-guide">🗂️ Repository Guide</a> • <a href="#citation">📝 Citation</a> • <a href="#contact">💬 Contact</a>
 </p>
 <p><a href="README.md">English</a> · <a href="README.zh-CN.md">中文</a></p>
@@ -97,30 +97,6 @@ Comparisons reuse frozen inputs and recorded protocols. Reports retain missing
 samples and infrastructure failures rather than silently treating them as task
 failures or successes. Historical trace imports preserve caller-reported outcomes;
 they do not establish controlled recovery or independently verify task success.
-
-<a id="support"></a>
-
-## ✅ Support and Verification
-
-Current preview: **`0.1.0.dev11`**.
-
-| Area | Current scope |
-|---|---|
-| Executable environments | Deterministic FrozenLake and derived stdin/stdout coding; coding requires the bounded Linux namespace executor |
-| External data | Generic JSONL and optional Inspect logs; BFCL, SQL, and Terminal are external analysis inputs, with no bundled benchmark environments |
-| Training integrations | Pinned VeRL paths with limited one-rank acceptance; full PPO/GiGPO training, multi-rank execution, and optimizer resume remain unverified |
-| Paper reproduction | Method code is available; full benchmark numerical reproduction remains unverified |
-
-The latest CPU regression recorded **333 passed, 4 skipped**; the optional Inspect
-acceptance separately recorded **27 passed**. Real **Qwen3-1.7B** one-rank
-Ray/vLLM/FSDP engineering checks include BudgetMix and two process-enabled
-REINFORCE++ updates. These establish the documented execution paths, not method
-effectiveness. The seeded diagnostic off/on pair still diverges in one rollout
-and second-update state; complete trainer noninterference remains unverified.
-
-See [current status](STATUS.md), [support matrix](docs/support-matrix.md),
-[preview verification](docs/verification/dev11.md), and
-[GPU process verification](docs/verification/process-gpu.md) for details.
 
 <a id="repository-guide"></a>
 

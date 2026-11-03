@@ -9,12 +9,11 @@
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></a>
 <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.11+"></a>
 <a href="https://github.com/GaryStack/Rethinking-Agent-RL/actions/workflows/ci.yml"><img src="https://github.com/GaryStack/Rethinking-Agent-RL/actions/workflows/ci.yml/badge.svg" alt="CPU core CI"></a>
-<a href="https://github.com/GaryStack/Rethinking-Agent-RL/stargazers"><img src="https://img.shields.io/github/stars/GaryStack/Rethinking-Agent-RL?style=social" alt="GitHub stars"></a>
 </p>
 
 <p>
-<a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">✨ Getting Started</a><br>
-<a href="#contact">📨 Contact</a> • <a href="#citation">🎈 Citation</a> • <a href="#star-history">⭐ Star History</a>
+<a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">🚀 Getting Started</a><br>
+<a href="#contact">💬 Contact</a> • <a href="#citation">📝 Citation</a>
 </p>
 <p><a href="README.md">English</a> · <a href="README.zh-CN.md">中文</a></p>
 </div>
@@ -41,7 +40,7 @@ This repository provides the accompanying method implementations and diagnostic 
 
 <a id="getting-started"></a>
 
-## ✨ Getting Started
+## 🚀 Getting Started
 
 From a source checkout, with Python 3.11 or newer:
 
@@ -147,7 +146,7 @@ Preview changes and publishing steps are in the [changelog](CHANGELOG.md) and
 
 <a id="citation"></a>
 
-## 🎈 License and Citation
+## 📝 License and Citation
 
 Original code is released under the [MIT license](LICENSE). Third-party assets
 retain their own terms; see [NOTICE](NOTICE). Model weights, private benchmark
@@ -158,12 +157,6 @@ Final author and paper citation metadata will be added when finalized.
 
 <a id="contact"></a>
 
-## 📨 Contact
+## 💬 Contact
 
 For questions and feedback, please open an [issue](https://github.com/GaryStack/Rethinking-Agent-RL/issues).
-
-<a id="star-history"></a>
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=GaryStack/Rethinking-Agent-RL&type=Date)](https://star-history.com/#GaryStack/Rethinking-Agent-RL&Date)

@@ -9,12 +9,11 @@
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></a>
 <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.11+"></a>
 <a href="https://github.com/GaryStack/Rethinking-Agent-RL/actions/workflows/ci.yml"><img src="https://github.com/GaryStack/Rethinking-Agent-RL/actions/workflows/ci.yml/badge.svg" alt="CPU core CI"></a>
-<a href="https://github.com/GaryStack/Rethinking-Agent-RL/stargazers"><img src="https://img.shields.io/github/stars/GaryStack/Rethinking-Agent-RL?style=social" alt="GitHub stars"></a>
 </p>
 
 <p>
-<a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">✨ Getting Started</a><br>
-<a href="#contact">📨 Contact</a> • <a href="#citation">🎈 Citation</a> • <a href="#star-history">⭐ Star History</a>
+<a href="#news">🎉 News</a> • <a href="#overview">📖 Overview</a> • <a href="#getting-started">🚀 Getting Started</a><br>
+<a href="#contact">💬 Contact</a> • <a href="#citation">📝 Citation</a>
 </p>
 <p><a href="README.md">English</a> · <a href="README.zh-CN.md">中文</a></p>
 </div>
@@ -41,7 +40,7 @@
 
 <a id="getting-started"></a>
 
-## ✨ 快速开始
+## 🚀 快速开始
 
 在源码仓库根目录运行，要求 Python 3.11 或更新版本：
 
@@ -137,7 +136,7 @@ ruff format --check src tests scripts examples
 
 <a id="citation"></a>
 
-## 🎈 许可证与引用
+## 📝 许可证与引用
 
 原创代码采用 [MIT 许可证](LICENSE)，第三方资产保留各自条款，见 [NOTICE](NOTICE)。
 仓库不包含模型权重、私有 benchmark 测试、原始轨迹或完整实验结果。
@@ -146,12 +145,6 @@ ruff format --check src tests scripts examples
 
 <a id="contact"></a>
 
-## 📨 Contact
+## 💬 Contact
 
 欢迎通过 [issue](https://github.com/GaryStack/Rethinking-Agent-RL/issues).
-
-<a id="star-history"></a>
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=GaryStack/Rethinking-Agent-RL&type=Date)](https://star-history.com/#GaryStack/Rethinking-Agent-RL&Date)

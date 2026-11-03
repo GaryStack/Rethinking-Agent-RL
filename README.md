@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1><img src="docs/assets/logo.svg" width="40" height="40" alt="Project logo"> Rethinking Agentic RL</h1>
+<h1><img src="docs/assets/logo.svg" width="35" height="35" alt="Project logo"> Rethinking Agentic RL</h1>
 <p><strong>What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</strong></p>
 
 <p>

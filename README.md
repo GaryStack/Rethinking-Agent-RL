@@ -74,7 +74,7 @@ See the [CPU walkthrough](docs/tutorials/offline-toolkit.md).
 | Evaluate your own Base/RL checkpoints | [Model quickstart](docs/quickstart.md): HTTP chat endpoint or optional local Transformers backend |
 | Compare existing agent versions | [JSONL trace tutorial](docs/tutorials/external-traces.md): matched-task success, token/time/cost coverage, original records, and an optional CI regression gate |
 | Use Inspect evaluations or tool agents | [Inspect tutorial](docs/tutorials/inspect-agent.md): native `.eval`/JSON imports and an executable SQLite tool example |
-| Study or extend the methods | [Paper companion](paper/README.md), [protocols](docs/protocols.md), and [custom scorer example](docs/extensions.md) |
+| View the paper implementation | [Paper companion](paper/README.md) |
 
 Core evaluation and JSONL analysis use only the Python standard library.
 Local Transformers inference, Inspect, and training integrations are optional.
@@ -82,6 +82,8 @@ Local Transformers inference, Inspect, and training integrations are optional.
 <a id="diagnostic-tools"></a>
 
 ## 🧰 Diagnostic Tools
+
+Tools for analyzing and diagnosing agentic RL training.
 
 | Tool | Question it answers | Entry and tutorial |
 |---|---|---|
@@ -95,11 +97,6 @@ Two additional method paths are available:
 - **Likelihood / NLL / LLR:** teacher-forced response likelihood, action-token NLL, aligned Base/RL log-likelihood ratios, and length controls. [Inputs and commands](docs/likelihood.md).
 - **Process signals:** oracle or judge scores, versioned caching, explicit reward mixing, and a runnable reward-to-update example. [Method and trainer integration](docs/process-signals.md).
 
-Comparisons reuse frozen inputs and recorded protocols. Reports retain missing
-samples and infrastructure failures rather than silently treating them as task
-failures or successes. Historical trace imports preserve caller-reported outcomes;
-they do not establish controlled recovery or independently verify task success.
-
 <a id="repository-guide"></a>
 
 ## 🗂️ Repository Guide
@@ -110,7 +107,7 @@ they do not establish controlled recovery or independently verify task success.
 | [`configs/examples/`](configs/examples/) | Evaluation and backend configuration examples |
 | [`examples/`](examples/) | Likelihood fixtures, process reward updates, external traces, and tool-agent examples |
 | [`docs/tutorials/`](docs/tutorials/) | Runnable workflows for the four tools and external data |
-| [`paper/`](paper/) | Mapping from research methods to code and verification scope |
+| [`paper/`](paper/) | Paper implementation and methods |
 
 For development:
 
@@ -120,10 +117,6 @@ python -m pytest -q
 ruff check .
 ruff format --check src tests scripts examples
 ```
-
-Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).
-Preview changes and publishing steps are in the [changelog](CHANGELOG.md) and
-[release guide](docs/release.md).
 
 <a id="citation"></a>
 

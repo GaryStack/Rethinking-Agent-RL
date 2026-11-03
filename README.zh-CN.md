@@ -71,13 +71,15 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 | 评测自己的 Base/RL checkpoint | [模型 quickstart](docs/quickstart.md)：HTTP chat 服务，或可选的本地 Transformers backend |
 | 比较已有 Agent 版本 | [JSONL 日志教程](docs/tutorials/external-traces.md)：同任务成功率、token/耗时/费用覆盖、原始记录和可选 CI 回归门槛 |
 | 接入 Inspect 或工具智能体 | [Inspect 教程](docs/tutorials/inspect-agent.md)：原生 `.eval`/JSON 导入和可执行 SQLite 工具示例 |
-| 研究或扩展方法 | [论文配套代码](paper/README.md)、[评测协议](docs/protocols.md)与[自定义 scorer](docs/extensions.md) |
+| 查看论文实现 | [论文配套代码](paper/README.md) |
 
 核心评测和 JSONL 分析仅依赖 Python 标准库；本地 Transformers 推理、Inspect 和训练接入均为可选依赖。
 
 <a id="diagnostic-tools"></a>
 
 ## 🧰 诊断工具
+
+用于分析和诊断 agentic RL 训练的工具。
 
 | 工具 | 回答什么问题 | 入口与教程 |
 |---|---|---|
@@ -91,9 +93,6 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 - **Likelihood / NLL / LLR：** teacher-forced response likelihood、动作 token NLL、对齐后的 Base/RL 对数似然比和长度控制。[输入与命令](docs/likelihood.md)。
 - **Process signals：** oracle/judge 评分、版本化缓存、显式奖励混合，以及可运行的奖励到参数更新示例。[方法与训练接入](docs/process-signals.md)。
 
-对比复用冻结输入和已记录的协议；缺失样本、基础设施失败保持可见，不会被悄悄改成任务失败或成功。
-历史日志导入保留调用方报告的结果，不代表受控错误恢复实验，也不独立认证任务成功。
-
 <a id="repository-guide"></a>
 
 ## 🗂️ 仓库导航
@@ -104,7 +103,7 @@ ard toolkit-demo --output runs/toolkit-walkthrough
 | [`configs/examples/`](configs/examples/) | 评测与 backend 配置示例 |
 | [`examples/`](examples/) | Likelihood 输入、过程奖励更新、外部日志和工具智能体示例 |
 | [`docs/tutorials/`](docs/tutorials/) | 四个工具与外部数据的可运行教程 |
-| [`paper/`](paper/) | 研究方法、代码和验证范围的对应关系 |
+| [`paper/`](paper/) | 论文实现与方法 |
 
 开发检查：
 
@@ -114,9 +113,6 @@ python -m pytest -q
 ruff check .
 ruff format --check src tests scripts examples
 ```
-
-欢迎贡献，见 [CONTRIBUTING.md](CONTRIBUTING.md)。版本变化与发布步骤见
-[CHANGELOG](CHANGELOG.md) 和[发布指南](docs/release.md)。
 
 <a id="citation"></a>
 

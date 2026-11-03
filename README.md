@@ -31,6 +31,8 @@
 
 ## 📖 Overview
 
+While multi-turn agentic reinforcement learning (RL) excels on long-horizon tasks, its performance gains remain **highly sensitive to interaction constraints**. Evaluating across sampling breadth **K** and interaction depth **T** via **Pass@(K,T)**, we show that trajectory-level RL advantages depend on sufficient turn budgets, diminishing significantly when budgets tighten. Besides, agentic RL does not uniformly elevate single-step decision quality; rather, its strength concentrates in **error recovery and long-horizon resilience**. To mitigate the deployment risks caused by this budget dependence, we provide a preliminary discussion on the benefits and limitations of process supervision signals and introduce **BudgetMix RL** as an alternative that varies interaction budgets during training. Experiments demonstrate that BudgetMix RL achieves robust performance across diverse execution settings.
+
 - **Pass@(K,T):** Multi-turn RL can surpass the base model’s empirical Pass@K boundary, but its advantage may diminish or reverse under tight turn budgets.
 - **Single-step action quality:** RL does not consistently improve individual decisions; its advantages concentrate in error recovery and long-horizon resilience.
 - **Towards more robust RL:** We discuss process supervision signals and introduce BudgetMix RL, which varies interaction budgets during training.

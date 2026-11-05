@@ -4,7 +4,7 @@
 <p><strong>What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</strong></p>
 
 <p>
-<a href="https://arxiv.org/abs/2608.03573"><img src="https://img.shields.io/badge/arXiv-2608.03573-b31b1b?logo=arxiv" alt="arXiv"></a>
+<a href="https://arxiv.org/abs/2611.06483"><img src="https://img.shields.io/badge/arXiv-2611.06483-b31b1b?logo=arxiv" alt="arXiv"></a>
 <a href="https://rethinking-agentic-rl.github.io/"><img src="https://img.shields.io/badge/Project-Page-24725d?logo=googlechrome&amp;logoColor=white" alt="Project Page"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="MIT License"></a>
 <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&amp;logoColor=white" alt="Python 3.11+"></a>
